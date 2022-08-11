@@ -1,7 +1,7 @@
 /* global config csv2geojson turf Assembly $ */
 'use strict';
 
-mapboxgl.accessToken = "pk.eyJ1IjoibWFwYm94LWNvbW11bml0eSIsImEiOiJja2tkN21jcjAwMG51MnBxdHAxemdueGpzIn0.e0IzLkytGq4pcGGieP8KNA";
+mapboxgl.accessToken = "pk.eyJ1IjoidGhlamFtZXNoZWFyZCIsImEiOiJjbDZndjluN2YwMDF3M2JyeG52dHFoaXV1In0.clP391payV0qfNDtemgiag";
 const columnHeaders = config.sideBarInfo;
 
 let geojsonData = {};

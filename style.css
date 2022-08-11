@@ -1,3 +1,8 @@
+.body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: blue;
+}
+
 #sidebarA{
     color: white;
 }
@@ -74,10 +79,10 @@
 }
 
 .mapboxgl-popup-content {
-    font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
-    text-align: center;
+    font: 400 15px/22px;
+    text-align: left;
     padding: 5;
-    width: 180px;
+    width: 300px;
   }
 
 .mapboxgl-popup-close-button {
@@ -85,12 +90,12 @@
   }
 
 .mapboxgl-popup-content h3 {
-    color:black;
     font-weight: 500;
     margin: 0;
     display: block;
 
   }
+
 
 
   

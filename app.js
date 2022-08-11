@@ -13,8 +13,8 @@ const filteredGeojson = {
 const map = new mapboxgl.Map({
   container: 'map',
   style: config.style,
-  // center: config.center,
-  // zoom: config.zoom,
+  center: config.center,
+  zoom: config.zoom,
   projection: 'globe',
   transformRequest: transformRequest,
 });
@@ -22,7 +22,7 @@ const map = new mapboxgl.Map({
 function flyToLocation(currentFeature) {
   map.flyTo({
     center: currentFeature,
-    zoom: 11,
+    //zoom: 5,
   });
 }
 
@@ -32,9 +32,15 @@ function createPopup(currentFeature) {
   if (popups[0]) popups[0].remove();
   new mapboxgl.Popup({ closeOnClick: true })
     .setLngLat(currentFeature.geometry.coordinates)
-    .setHTML('<h3>' + currentFeature.properties[config.popupInfo] + '</h3>')
+    .setHTML(`<h3>` + currentFeature.properties.story_title + `</h3>` + 
+    `<h4>` + `<b>` + `Date: ` + `</b>` + currentFeature.properties.initial_date + '-' + currentFeature.properties.final_date + `</h4>` + 
+    `<h4>` + `<b>` + `Architect/Patron: ` + `</b>` + currentFeature.properties.architect + `</h4>` +
+    `<h4>` + `<b>` + `Book: ` + `</b>` + currentFeature.properties.Author_Surname + ', ' + currentFeature.properties.book_title + `</h4>`)
     .addTo(map);
-}
+  }
+      //'<h3>' + currentFeature.properties[config.popupInfo] + '</h3>'
+      
+
 
 function buildLocationList(locationData) {
   /* Add a new listing section to the sidebar. */
@@ -366,12 +372,6 @@ applyFilters();
 filters(config.filters);
 removeFiltersButton();
 
-const geocoder = new MapboxGeocoder({
-  accessToken: mapboxgl.accessToken, // Set the access token
-  mapboxgl: mapboxgl, // Set the mapbox-gl instance
-  marker: true, // Use the geocoder's default marker style
-  zoom: 11,
-});
 
 function sortByDistance(selectedPoint) {
   const options = { units: 'miles' };
@@ -406,13 +406,12 @@ function sortByDistance(selectedPoint) {
   buildLocationList(data);
 }
 
-geocoder.on('result', (ev) => {
-  const searchResult = ev.result.geometry;
-  sortByDistance(searchResult);
-});
+//geocoder.on('result', (ev) => {
+  //const searchResult = ev.result.geometry;
+  //sortByDistance(searchResult);
+//});
 
 map.on('load', () => {
-  map.addControl(geocoder, 'top-right');
 
   // csv2geojson - following the Sheet Mapper tutorial https://www.mapbox.com/impact-tools/sheet-mapper
   console.log('loaded');
@@ -456,10 +455,10 @@ map.on('load', () => {
             data: geojsonData,
           },
           paint: {
-            'circle-radius': 5, // size of circles
-            'circle-color': '#3D2E5D', // color of circles
+            'circle-radius': 4, // size of circles
+            'circle-color': '#ffffff', // color of circles
             'circle-stroke-color': 'white',
-            'circle-stroke-width': 1,
+            'circle-stroke-width': 0,
             'circle-opacity': 0.7,
           },
         });

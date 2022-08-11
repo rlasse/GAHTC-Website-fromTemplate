@@ -7,11 +7,5 @@
         "url": "http://localhost:8080",
         "webRoot": "${workspaceFolder}"
     },
-        {
-            "type": "chrome",
-            "name": "http://192.168.4.26:8080",
-            "request": "launch",
-            "url": "http://192.168.4.26:8080"
-        }
     ]
 }

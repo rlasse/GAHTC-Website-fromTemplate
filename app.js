@@ -35,7 +35,7 @@ function createPopup(currentFeature) {
     .setHTML(`<h3>` + currentFeature.properties.story_title + `</h3>` + 
     `<h4>` + `<b>` + `Date: ` + `</b>` + currentFeature.properties.initial_date + '-' + currentFeature.properties.final_date + `</h4>` + 
     `<h4>` + `<b>` + `Architect/Patron: ` + `</b>` + currentFeature.properties.architect + `</h4>` +
-    `<h4>` + `<b>` + `Book: ` + `</b>` + currentFeature.properties.Author_Surname + ', ' + currentFeature.properties.book_title + `</h4>`)
+    `<h4>` + `<b>` + `Book: ` + `</b>` + currentFeature.properties.Author_Surname_1 + ', ' + currentFeature.properties.book_title + `</h4>`)
     .addTo(map);
   }
       //'<h3>' + currentFeature.properties[config.popupInfo] + '</h3>'

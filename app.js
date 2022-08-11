@@ -25,7 +25,28 @@ function flyToLocation(currentFeature) {
     //zoom: 5,
   });
 }
+//RANGE SLIDER
+var sliderOptions = {
+  elm: 'slider-control',
+  layer: 'demo',
+  source: 'demo',
+  input: true,
+  controlWidth: '400px',
+  minProperty: 'Start',
+  maxProperty: 'End',
+  sliderMin: '1965-01-01T08:00:00.000Z',
+  sliderMax: '2025-12-31T08:00:00.000Z',
+  filterMin: '1985-11-28T08:00:00.000Z',
+  filterMax: '2005-01-01T08:00:00.000Z',
+  propertyType: 'iso8601',
+  rangeDescriptionFormat: 'shortDate',
+  descriptionPrefix: 'Date:'
+}
 
+map.addControl(new RangeSlider(sliderOptions, 'top-right'));
+
+
+//POP-UP Feature
 function createPopup(currentFeature) {
   const popups = document.getElementsByClassName('mapboxgl-popup');
   /** Check if there is already a popup on the map and if so, remove it */

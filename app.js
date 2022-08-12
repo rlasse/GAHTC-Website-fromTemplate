@@ -26,18 +26,21 @@ function flyToLocation(currentFeature) {
   });
 }
 //RANGE SLIDER
+//issue is that the decade data of GeoJSON is taken as string not int/float, and i don't know how to convert. ParseInt fucked up things.
+
+
 var sliderOptions = {
   elm: 'slider-control',
   layer: 'locationData',
   source: 'locationData',
-  controlWidth: '400px',
+  controlWidth: '200px',
   minProperty: 'decade',
   maxProperty: 'decade',
-  //sliderMin: 0,
+  //sliderMin: -2000,
   //sliderMax: 2000,
-  //filterMin: 50,
+  //filterMin: -1950,
   //filterMax: 1950,
-  //propertyType: 'integer',
+  propertyType: 'integer',
   rangeDescriptionFormat: 'integer',
   descriptionPrefix: 'Year:'
 }

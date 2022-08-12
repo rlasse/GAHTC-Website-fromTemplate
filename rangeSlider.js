@@ -144,6 +144,7 @@ RangeSlider.prototype.setRanges = function() {
     noUiSlider.create(mbSlider, {
         start: sliderInitialValues,
         connect: true,
+        step: 10,
         range: {
             'min': sliderMin,
             'max': sliderMax
@@ -211,7 +212,7 @@ RangeSlider.prototype.calculateMinMaxValuesForLayer = function(map) {
                     feats[i].properties[RangeSlider.prototype.options.customMinProperty] = minFeatureValue;
                     feats[i].properties[RangeSlider.prototype.options.customMaxProperty] = maxFeatureValue;
                 }
-
+            //added parseInt here, making all featurevalues integers. This changed the top font problem, but it's not filtering.
             } else {
                 minFeatureValue = feats[i].properties[RangeSlider.prototype.options.minProperty];
                 maxFeatureValue = feats[i].properties[RangeSlider.prototype.options.maxProperty];

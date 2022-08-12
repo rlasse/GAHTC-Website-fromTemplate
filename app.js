@@ -55,19 +55,40 @@ var filterList = ['any',
 ];
 
 
-//POP-UP Feature
+//POP-UP Feature; 
 function createPopup(currentFeature) {
   const popups = document.getElementsByClassName('mapboxgl-popup');
   /** Check if there is already a popup on the map and if so, remove it */
   if (popups[0]) popups[0].remove();
-  new mapboxgl.Popup({ closeOnClick: true })
-    .setLngLat(currentFeature.geometry.coordinates)
-    .setHTML(`<h3>` + currentFeature.properties.story_title + `</h3>` + 
-    `<h4>` + `<b>` + `Date: ` + `</b>` + currentFeature.properties.initial_date + '-' + currentFeature.properties.final_date + `</h4>` + 
-    `<h4>` + `<b>` + `Architect/Patron: ` + `</b>` + currentFeature.properties.architect + `</h4>` +
-    `<h4>` + `<b>` + `Book: ` + `</b>` + currentFeature.properties.Author_Surname_1 + ', ' + currentFeature.properties.book_title + `</h4>`)
-    .addTo(map);
+  // if initial date is empty
+  if (currentFeature.properties.initial_date === "") {
+    new mapboxgl.Popup({ closeOnClick: true })
+      .setLngLat(currentFeature.geometry.coordinates)
+      .setHTML(`<h3>` + currentFeature.properties.story_title + `</h3>` + 
+      `<h4>` + `<b>` + `Date: ` + `</b>` + `Unknown` + `</h4>` + 
+      `<h4>` + `<b>` + `Architect/Patron: ` + `</b>` + currentFeature.properties.architect + `</h4>` +
+      `<h4>` + `<b>` + `Book: ` + `</b>` + currentFeature.properties.Author_Surname_1 + ', ' + currentFeature.properties.book_title + `</h4>`)
+      .addTo(map);
+  // if final date is empty
+  } else if (currentFeature.properties.final_date === "") {
+    new mapboxgl.Popup({ closeOnClick: true })
+      .setLngLat(currentFeature.geometry.coordinates)
+      .setHTML(`<h3>` + currentFeature.properties.story_title + `</h3>` + 
+      `<h4>` + `<b>` + `Date: ` + `</b>` + currentFeature.properties.initial_date + `</h4>` + 
+      `<h4>` + `<b>` + `Architect/Patron: ` + `</b>` + currentFeature.properties.architect + `</h4>` +
+      `<h4>` + `<b>` + `Book: ` + `</b>` + currentFeature.properties.Author_Surname_1 + ', ' + currentFeature.properties.book_title + `</h4>`)
+      .addTo(map);
+  // if initial and final date are available
+  } else {
+      new mapboxgl.Popup({ closeOnClick: true })
+        .setLngLat(currentFeature.geometry.coordinates)
+        .setHTML(`<h3>` + currentFeature.properties.story_title + `</h3>` + 
+        `<h4>` + `<b>` + `Date: ` + `</b>` + currentFeature.properties.initial_date + ' to ' + currentFeature.properties.final_date + `</h4>` + 
+        `<h4>` + `<b>` + `Architect/Patron: ` + `</b>` + currentFeature.properties.architect + `</h4>` +
+        `<h4>` + `<b>` + `Book: ` + `</b>` + currentFeature.properties.Author_Surname_1 + ', ' + currentFeature.properties.book_title + `</h4>`)
+        .addTo(map);
   }
+}
       //'<h3>' + currentFeature.properties[config.popupInfo] + '</h3>'
       
 

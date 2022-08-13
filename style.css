@@ -54,6 +54,7 @@
     height: 3px;
     border-left: 0;
     background: rgba(0, 0, 0, 0.1);
+    display: none;
 }
 
 ::-webkit-scrollbar-track {
@@ -118,7 +119,7 @@
     top: 0;
     right: 0;
     overflow: hidden;
-    border-right: 1px solid rgba(0, 0, 0, 0.25);
+    /* border-left: 1px solid rgba(0, 0, 0, 0.25); */
     z-index: 5;
 }
 
@@ -143,7 +144,13 @@
     top: 0;
     bottom: 0;
     z-index: 1;
-    }
+}
+
+.listings {
+        height: 100%;
+        overflow: auto;
+        padding-bottom: 60px;
+}
 
 /*
 class to change color

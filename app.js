@@ -3,7 +3,43 @@
 
 
 mapboxgl.accessToken = "pk.eyJ1IjoidGhlamFtZXNoZWFyZCIsImEiOiJjbDZndjluN2YwMDF3M2JyeG52dHFoaXV1In0.clP391payV0qfNDtemgiag";
-const columnHeaders = config.sideBarInfo;
+const columnHeaders = ['story_title', 'architect', 'city'];
+
+const filterconfigs = [
+    {
+      type: 'checkbox',
+      title: 'Book: ',
+      columnHeader: 'book_title',
+      listItems: [
+        'A History of Architecture: Settings and Rituals',
+        'Modern Movements in Architecture',
+        'A Global History of Architecture',
+        'A World History of Architecture',
+      ],
+    },
+    {
+      type: 'checkbox',
+      title: 'Devices available: ',
+      columnHeader: 'Devices_available', // Case sensitive - must match spreadsheet entry
+      listItems: ['Computer', 'Wi-Fi', 'Adaptive Laptops'], // Case sensitive - must match spreadsheet entry; This will take up to six inputs but is best used with a maximum of three;
+    },
+    {
+      type: 'dropdown',
+      title: 'Clients: ',
+      columnHeader: 'Clients',
+      listItems: [
+        'Adults',
+        'Disabled',
+        'Homeless',
+        'Immigrants/Refugees',
+        'Low Income',
+        'Seniors',
+        'Youth: Pre-teen',
+        'Youth: Teen',
+      ],
+    },
+  ];
+
 
 let geojsonData = {};
 const filteredGeojson = {
@@ -13,9 +49,9 @@ const filteredGeojson = {
 
 const map = new mapboxgl.Map({
   container: 'map',
-  style: config.style,
-  center: config.center,
-  zoom: config.zoom,
+  style: 'mapbox://styles/mapbox/satellite-v9',
+  // center: [-120.234, 47.398],
+  zoom: 2,
   projection: 'globe',
   transformRequest: transformRequest,
 });
@@ -28,7 +64,6 @@ function flyToLocation(currentFeature) {
 }
 //RANGE SLIDER
 //issue is that the decade data of GeoJSON is taken as string not int/float, and i don't know how to convert. ParseInt fucked up things.
-
 
 var sliderOptions = {
   elm: 'slider-control',
@@ -90,7 +125,6 @@ function createPopup(currentFeature) {
         .addTo(map);
   }
 }
-      //'<h3>' + currentFeature.properties[config.popupInfo] + '</h3>'
       
 
 
@@ -419,9 +453,9 @@ function removeFiltersButton() {
   });
 }
 
-createFilterObject(config.filters);
+createFilterObject(filterconfigs);
 applyFilters();
-filters(config.filters);
+filters(filterconfigs);
 removeFiltersButton();
 
 
@@ -471,7 +505,7 @@ map.on('load', () => {
     console.log('ready');
     $.ajax({
       type: 'GET',
-      url: config.CSV,
+      url: './GAHTC_Data.csv',
       dataType: 'text',
       success: function (csvData) {
         makeGeoJSON(csvData);
@@ -517,6 +551,7 @@ map.on('load', () => {
       },
     );
 
+    //Fly to Location
     map.on('click', 'locationData', (e) => {
       const features = map.queryRenderedFeatures(e.point, {
         layers: ['locationData'],

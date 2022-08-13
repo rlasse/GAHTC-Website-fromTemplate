@@ -16,8 +16,14 @@ const filterconfigs = [
         'A Global History of Architecture',
         'A World History of Architecture',
       ],
+      /*listTitles: [
+        'Test1',
+        'Test2',
+        'Test3',
+        'Test4',
+      ],*/
     },
-    {
+    /*{
       type: 'checkbox',
       title: 'Devices available: ',
       columnHeader: 'Devices_available', // Case sensitive - must match spreadsheet entry
@@ -25,19 +31,19 @@ const filterconfigs = [
     },
     {
       type: 'dropdown',
-      title: 'Clients: ',
+      //title: 'Clients: ',
       columnHeader: 'Clients',
-      listItems: [
+      //listItems: [
         'Adults',
         'Disabled',
         'Homeless',
         'Immigrants/Refugees',
-        'Low Income',
-        'Seniors',
-        'Youth: Pre-teen',
-        'Youth: Teen',
-      ],
-    },
+        //'Low Income',
+        //'Seniors',
+        //'Youth: Pre-teen',
+        //'Youth: Teen',
+      //],
+    //},*/
   ];
 
 
@@ -235,7 +241,7 @@ function buildDropDownList(title, listItems) {
 // listItems - the array of filter items
 // To DO: Clean up code - for every third checkbox, create a div and append new checkboxes to it
 
-function buildCheckbox(title, listItems) {
+function buildCheckbox(title, listItems, listTitles) {
   const filtersDiv = document.getElementById('filters');
   const mainDiv = document.createElement('div');
   const filterTitle = document.createElement('div');
@@ -274,6 +280,7 @@ function buildCheckbox(title, listItems) {
     const checkboxDiv = document.createElement('div');
     const inputValue = document.createElement('p');
     inputValue.innerText = listItems[i];
+    //inputValue.innerText = listTitles[i];
     checkboxDiv.classList.add('checkbox', 'mr6');
     checkboxDiv.appendChild(Assembly.createIcon('check'));
 

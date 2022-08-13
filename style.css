@@ -109,6 +109,42 @@
     font-weight: 700;
 }
 
+/* HTML sidebar */
+
+.sidebar {
+    position: absolute;
+    width: 33.3333%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    border-right: 1px solid rgba(0, 0, 0, 0.25);
+    z-index: 5;
+}
+
+/* HTML sidebar heading style */
+
+.heading {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    min-height: 60px;
+    line-height: 60px;
+    padding: 0 10px;
+    background-color: #00853e;
+    color: #fff;
+}
+
+/*Map location*/
+
+.map {
+    position: absolute;
+    right: 0%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    }
+
 /*
 class to change color
 .noUi-connect {

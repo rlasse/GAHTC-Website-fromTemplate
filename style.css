@@ -14,14 +14,37 @@
 
 }
 
+#filters{
+    padding-top: 36px;
+}
+
 .theme{
     background-color: #2A395F;
 }
 
-.select{
-    font-style: italic;
-    opacity: .7;
+
+/* ----SELECT STYLES---- */
+.custom-select {
+    position: relative;
+    font-family: Arial;
+    width: 200px;
+    padding-left: 12px;
 }
+
+.filterTitles {
+    font-weight: 800;
+    padding-top: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+
+.checkbox-container{
+    display: flex;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
 
 .mapboxgl-ctrl-geocoder--input {
     padding: 6px 30px;
@@ -33,6 +56,8 @@
     word-wrap: break-word;
     text-decoration: none;
     border-bottom: solid rgb(34, 33, 33, .3) 1px;
+    padding-left: 12px;
+    padding-right: 12px;
 }
 
 .listings .item:last-child {
@@ -42,7 +67,7 @@
 .listings .item .title {
     display: inline-block;
     width: 100%;
-    color: #2A395F;
+    color: black;
     font-weight: 800;
     margin-top: 5px;
     text-decoration: none;
@@ -114,25 +139,47 @@
 
 .sidebar {
     position: absolute;
-    width: 33.3333%;
-    height: 100%;
-    top: 0;
-    right: 0;
-    overflow: hidden;
+    display: none;
+    top: 30px;
+    right: 30px;
+    bottom: 30px;
+    width: 25%;
+    min-width: 300px;
     /* border-left: 1px solid rgba(0, 0, 0, 0.25); */
-    z-index: 5;
+    overflow: scroll;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
-/* HTML sidebar heading style */
+.sidebar-child {
+    overflow: hidden;
+    padding: 20 px;
+}
+
+.sidebar-button {
+    position: absolute;
+    top: 35px;
+    right: 35px;
+    z-index: 6;
+}
+
+#showFilters {
+    display: block;
+}
+
+#hideFilters {
+    display: none;
+}
+
+/* HTML sidebar heading style; wanna make it sticky buyt it's not working */
 
 .heading {
-    background: #fff;
+    position: sticky;
+    background: none;
     border-bottom: 1px solid #eee;
     min-height: 60px;
     line-height: 60px;
     padding: 0 10px;
-    background-color: #00853e;
-    color: #fff;
+    color: #00853e;
 }
 
 /*Map location*/
@@ -151,6 +198,7 @@
         overflow: auto;
         padding-bottom: 60px;
 }
+
 
 /*
 class to change color

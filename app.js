@@ -16,35 +16,28 @@ const filterconfigs = [
         'A Global History of Architecture',
         'A World History of Architecture',
       ],
-      /*listTitles: [
-        'Test1',
-        'Test2',
+      listTitles: [
+        'Spiro Kostof and Greg Castillo, A History of Architecture: Settings and Rituals',
+        'Charles Jencks, Modern Movements in Architecture',
         'Test3',
         'Test4',
-      ],*/
-    },
-    /*{
-      type: 'checkbox',
-      title: 'Devices available: ',
-      columnHeader: 'Devices_available', // Case sensitive - must match spreadsheet entry
-      listItems: ['Computer', 'Wi-Fi', 'Adaptive Laptops'], // Case sensitive - must match spreadsheet entry; This will take up to six inputs but is best used with a maximum of three;
+      ],
     },
     {
       type: 'dropdown',
-      //title: 'Clients: ',
-      columnHeader: 'Clients',
-      //listItems: [
-        'Adults',
-        'Disabled',
-        'Homeless',
-        'Immigrants/Refugees',
-        //'Low Income',
-        //'Seniors',
-        //'Youth: Pre-teen',
-        //'Youth: Teen',
-      //],
-    //},*/
+      title: 'Includes floor plan ',
+      columnHeader: 'floor_plan_(Y/N)',
+      listItems: [
+        'Y',
+        'N',
+      ],
+      listTitles: [
+        'Yes',
+        'No',
+      ],
+    },
   ];
+
 
 
 let geojsonData = {};
@@ -133,7 +126,7 @@ function createPopup(currentFeature) {
 }
       
 
-
+//Listings on the side
 function buildLocationList(locationData) {
   /* Add a new listing section to the sidebar. */
   const listings = document.getElementById('listings');
@@ -202,16 +195,16 @@ function buildLocationList(locationData) {
 // defaultValue - the default option for the dropdown list
 // listItems - the array of filter items
 
-function buildDropDownList(title, listItems) {
+function buildDropDownList(title, listItems, listTitles) {
   const filtersDiv = document.getElementById('filters');
   const mainDiv = document.createElement('div');
   const filterTitle = document.createElement('h3');
   filterTitle.innerText = title;
-  filterTitle.classList.add('py12', 'txt-bold');
+  filterTitle.classList.add('filterTitles'); //change the styling of title
   mainDiv.appendChild(filterTitle);
 
   const selectContainer = document.createElement('div');
-  selectContainer.classList.add('select-container', 'center');
+  selectContainer.classList.add(/*'select-container', 'center', */'custom-select');
 
   const dropDown = document.createElement('select');
   dropDown.classList.add('select', 'filter-option');
@@ -229,12 +222,16 @@ function buildDropDownList(title, listItems) {
   for (let i = 0; i < listItems.length; i++) {
     const opt = listItems[i];
     const el1 = document.createElement('option');
-    el1.textContent = opt;
+    el1.textContent = filterconfigs[1].listTitles[i];
     el1.value = opt;
     dropDown.appendChild(el1);
   }
   filtersDiv.appendChild(mainDiv);
 }
+
+
+
+
 
 // Build checkbox function
 // title - the name or 'category' of the selection e.g. 'Languages: '
@@ -246,22 +243,16 @@ function buildCheckbox(title, listItems, listTitles) {
   const mainDiv = document.createElement('div');
   const filterTitle = document.createElement('div');
   const formatcontainer = document.createElement('div');
-  filterTitle.classList.add('center', 'flex-parent', 'py12', 'txt-bold');
-  formatcontainer.classList.add(
-    'center',
-    'flex-parent',
-    'flex-parent--column',
-    'px3',
-    'flex-parent--space-between-main',
-  );
-  const secondLine = document.createElement('div');
+  filterTitle.classList.add('filterTitles');
+  formatcontainer.classList.add('test');
+  /*const secondLine = document.createElement('div');
   secondLine.classList.add(
     'center',
     'flex-parent',
     'py12',
     'px3',
     'flex-parent--space-between-main',
-  );
+  );*/
   filterTitle.innerText = title;
   mainDiv.appendChild(filterTitle);
   mainDiv.appendChild(formatcontainer);
@@ -279,9 +270,9 @@ function buildCheckbox(title, listItems, listTitles) {
 
     const checkboxDiv = document.createElement('div');
     const inputValue = document.createElement('p');
-    inputValue.innerText = listItems[i];
-    //inputValue.innerText = listTitles[i];
-    checkboxDiv.classList.add('checkbox', 'mr6');
+    //inputValue.innerText = listItems[i];
+    inputValue.innerText = filterconfigs[0].listTitles[i];
+    checkboxDiv.classList.add('checkbox', 'color-black', 'mr6', 'bg-white', 'border--black');
     checkboxDiv.appendChild(Assembly.createIcon('check'));
 
     container.appendChild(input);
@@ -292,6 +283,8 @@ function buildCheckbox(title, listItems, listTitles) {
   }
   filtersDiv.appendChild(mainDiv);
 }
+
+// Filters push filtered values in array
 
 const selectFilters = [];
 const checkboxFilters = [];
@@ -316,6 +309,8 @@ function createFilterObject(filterSettings) {
     }
   });
 }
+
+//filters get applied to map
 
 function applyFilters() {
   const filterForm = document.getElementById('filters');
@@ -579,6 +574,33 @@ map.on('load', () => {
     buildLocationList(geojsonData);
   }
 });
+
+//Buttons
+
+const showFilters = document.getElementById('showFilters');
+const sidebar = document.getElementById('sidebar');
+const sidebarButtonShow = document.getElementById('sidebar-button');
+const hideFilters = document.getElementById('hideFilters');
+
+showFilters.addEventListener('click', () => {
+  sidebar.style.display = 'block';
+  sidebar.classList.add('z5');
+  showFilters.style.display = 'none';
+  hideFilters.style.display = 'block';
+});
+
+hideFilters.addEventListener('click', () => {
+  sidebar.style.display = 'none';
+  sidebar.classList.remove('z5');
+  showFilters.style.display = 'block';
+  hideFilters.style.display = 'none';
+});
+
+
+
+
+
+
 
 // Modal - popup for filtering results
 const filterResults = document.getElementById('filterResults');

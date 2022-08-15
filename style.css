@@ -118,7 +118,9 @@
   }
 
 .mapboxgl-popup-content h3 {
-    font-weight: 500;
+    font-weight: 800;
+    font-size: 15px;
+    padding-bottom: 3px;
     margin: 0;
     display: block;
 

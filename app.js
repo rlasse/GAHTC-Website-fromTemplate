@@ -550,9 +550,11 @@ map.on('load', () => {
           paint: {
             'circle-radius': 4, // size of circles
             'circle-color': '#ffffff', // color of circles
-            'circle-stroke-color': 'white',
+            //'circle-stroke-color': 'white',
             'circle-stroke-width': 0,
             'circle-opacity': 0.7,
+            //color circles by book
+            'circle-color': 'white',
           },
         });
       },

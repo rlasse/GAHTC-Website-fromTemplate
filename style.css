@@ -157,8 +157,8 @@
 
 .sidebar-button {
     position: absolute;
-    top: 35px;
-    right: 35px;
+    top: 40px;
+    right: 40px;
     z-index: 6;
 }
 
@@ -174,12 +174,13 @@
 
 .heading {
     position: sticky;
-    background: none;
+    background: black;
     border-bottom: 1px solid #eee;
     min-height: 60px;
     line-height: 60px;
+    top: 20px;
     padding: 0 10px;
-    color: #00853e;
+    color: white;
 }
 
 /*Map location*/

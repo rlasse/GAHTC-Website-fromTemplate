@@ -1,0 +1,286 @@
+.body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: blue;
+}
+
+#sidebarA {
+  color: white;
+}
+
+#filterResults {
+  font-size: 12px;
+  color: white;
+  background-color: #448EE4;
+}
+
+#filters {
+  padding-top: 6px;
+}
+
+.theme {
+  background-color: #2A395F;
+}
+
+/* ----SELECT STYLES---- */
+.custom-select {
+  position: relative;
+  font-family: Arial;
+  width: 200px;
+  padding-left: 12px;
+}
+
+.filterTitles {
+  font-weight: 800;
+  padding-top: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.checkbox-container {
+  display: flex;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.mapboxgl-ctrl-geocoder--input {
+  padding: 6px 30px;
+  margin-left: 5px;
+}
+
+.listings .item {
+  font-size: 14px;
+  word-wrap: break-word;
+  text-decoration: none;
+  border-bottom: solid rgba(34, 33, 33, 0.3) 1px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-bottom: 6px;
+  padding-top: 6px;
+}
+
+.listings .item:last-child {
+  border-bottom: none;
+}
+
+.listings .item .title {
+  display: inline-block;
+  width: 100%;
+  color: black;
+  font-weight: 800;
+  margin-top: 5px;
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+  border-left: 0;
+  background: rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background: #2A395F;
+}
+
+.clearfix {
+  display: block;
+}
+
+.clearfix::after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.mapboxgl-popup-content {
+  font: 400 15px/22px;
+  text-align: left;
+  padding: 5;
+  width: 300px;
+}
+
+.mapboxgl-popup-close-button {
+  display: none;
+}
+
+.mapboxgl-popup-content h3 {
+  font-weight: 800;
+  font-size: 15px;
+  padding-bottom: 3px;
+  margin: 0;
+  display: block;
+}
+
+/* Range Slider styles */
+.slider-control-container {
+  padding: 5px;
+}
+
+.slider-control-range-display {
+  font-size: 14px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 700;
+}
+
+/* HTML sidebar */
+.sidebar {
+  position: absolute;
+  border-radius: 10px;
+  display: none;
+  top: 30px;
+  right: 30px;
+  bottom: 30px;
+  width: 25%;
+  min-width: 300px;
+  /* border-left: 1px solid rgba(0, 0, 0, 0.25); */
+  overflow: scroll;
+  background-color: rgb(255, 255, 255);
+}
+
+.filters-parent {
+  padding-bottom: 50px;
+}
+
+.sidebar-child {
+  overflow: hidden;
+  padding: 20 px;
+}
+
+.sidebar-button {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  z-index: 6;
+}
+
+#showFilters {
+  display: block;
+}
+
+#hideFilters {
+  display: none;
+}
+
+/* HTML sidebar heading style; wanna make it sticky buyt it's not working */
+.heading {
+  position: sticky;
+  background: black;
+  border-bottom: 1px solid #eee;
+  min-height: 60px;
+  line-height: 60px;
+  top: 20px;
+  padding-left: 12px;
+  color: white;
+}
+
+.sidebar-heading {
+  position: sticky;
+  background: black;
+  border-bottom: 1px solid #eee;
+  min-height: 60px;
+  line-height: 60px;
+  padding-left: 12px;
+  color: white;
+}
+
+/*Map location*/
+.map {
+  position: absolute;
+  right: 0%;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  /*background-color: #121212;*/
+}
+
+.listings {
+  height: 100%;
+  overflow: auto;
+  padding-top: 20px;
+  padding-bottom: 60px;
+}
+
+h1 {
+  font-weight: 800;
+}
+
+/*
+class to change color
+.noUi-connect {
+    background: #2980b9;
+}
+*/
+/*dual rangeslider*/
+input[type=range] {
+  box-sizing: border-box;
+  appearance: none;
+  width: 90%;
+  margin: 0;
+  /*padding: 0 2px;*/
+  /* Add some L/R padding to ensure box shadow of handle is shown */
+  overflow: hidden;
+  border: 0;
+  border-radius: 1px;
+  outline: none;
+  background: linear-gradient(grey, grey) no-repeat center;
+  /* Use a linear gradient to generate only the 2px height background */
+  background-size: 100% 2px;
+  pointer-events: none;
+}
+input[type=range]:active, input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-thumb {
+  height: 15px;
+  width: 15px;
+  border-radius: 15px;
+  background-color: black;
+  position: relative;
+  /*margin: 5px 0;*/
+  /* Add some margin to ensure box shadow is shown */
+  cursor: pointer;
+  appearance: none;
+  pointer-events: all;
+  /*box-shadow: 0 1px 4px 0.5px rgba(0, 0, 0, 0.25);*/
+  z-index: 2;
+}
+input[type=range]::-webkit-slider-thumb::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 13px;
+  left: 100%;
+  width: 2000px;
+  height: 2px;
+}
+
+.multi-range {
+  position: relative;
+  padding: 12px;
+  width: inherit;
+  height: 50px;
+}
+.multi-range input[type=range] {
+  position: absolute;
+}
+.multi-range input[type=range]:nth-child(1)::-webkit-slider-thumb::before {
+  background-color: red;
+}
+.multi-range input[type=range]:nth-child(2) {
+  background: none;
+}
+.multi-range input[type=range]:nth-child(2)::-webkit-slider-thumb::before {
+  background-color: grey;
+}
+
+/*# sourceMappingURL=style.css.map */

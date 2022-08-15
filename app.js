@@ -602,6 +602,70 @@ hideFilters.addEventListener('click', () => {
   hideFilters.style.display = 'none';
 });
 
+//query date data for min,max etc
+
+var rangeOptions = {
+  layer: 'locationData',
+  source: 'locationData',
+  dateProperty: 'initial_date',
+  rangeMin: -2000,
+  rangeMax: 2030,
+  valueMin: -2000,
+  valueMax: 2000,
+  step: 10,
+  propertyType: 'integer',
+  rangeDescriptionFormat: 'integer',
+}
+
+
+//Slider
+
+
+
+var lowerSlider = document.querySelector('#lower'),
+  upperSlider = document.querySelector('#upper'),
+  lowerVal = parseInt(lowerSlider.value),
+  upperVal = parseInt(upperSlider.value);
+
+document.getElementById('lower').step = rangeOptions.step;
+document.getElementById('lower'||'upperInput').value = rangeOptions.valueMin;
+document.querySelectorAll('input').min = rangeOptions.rangeMin;
+document.querySelectorAll('input').step = rangeOptions.step;
+document.querySelectorAll('input').max = rangeOptions.rangeMax;
+
+
+
+upperSlider.oninput = function() {
+   lowerVal = parseInt(lowerSlider.value);
+   upperVal = parseInt(upperSlider.value);
+   
+   if (upperVal < lowerVal + 4) {
+      lowerSlider.value = upperVal - 4;
+      
+      if (lowerVal == lowerSlider.min) {
+         upperSlider.value = 4;
+      }
+   }
+};
+
+
+lowerSlider.oninput = function() {
+   lowerVal = parseInt(lowerSlider.value);
+   upperVal = parseInt(upperSlider.value);
+   
+   if (lowerVal > upperVal - 4) {
+      upperSlider.value = lowerVal + 4;
+      
+      if (upperVal == upperSlider.max) {
+         lowerSlider.value = parseInt(upperSlider.max) - 4;
+      }
+
+   }
+};
+
+
+
+
 
 
 

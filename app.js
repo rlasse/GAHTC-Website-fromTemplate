@@ -46,13 +46,13 @@ const filteredGeojson = {
   features: [],
 };
 
-const rangeSliderDate = 
+/* const rangeSliderDate = 
 
 
 for (let i = 0; i < features.length; i++) {
   const element = features[i];
   
-}
+} */
 
 const map = new mapboxgl.Map({
   container: 'map',

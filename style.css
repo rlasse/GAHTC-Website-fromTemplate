@@ -198,6 +198,17 @@
     color: white;
 }
 
+.vertical-menu {
+    color: white;
+    display: block;
+    top: 12;
+    z-index: 7;
+}
+
+
+
+
+
 /*Map location*/
 
 .map {

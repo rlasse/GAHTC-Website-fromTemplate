@@ -46,6 +46,14 @@ const filteredGeojson = {
   features: [],
 };
 
+const rangeSliderDate = 
+
+
+for (let i = 0; i < features.length; i++) {
+  const element = features[i];
+  
+}
+
 const map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/mapbox/satellite-v9',
@@ -69,8 +77,8 @@ var sliderOptions = {
   layer: 'locationData',
   source: 'locationData',
   controlWidth: '400px',
-  minProperty: 'min',
-  maxProperty: 'max',
+  minProperty: 'initial_date',
+  maxProperty: 'initial_date',
   sliderMin: 2000,
   sliderMax: 2030,
   filterMin: 2005,

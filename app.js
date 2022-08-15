@@ -45,14 +45,10 @@ const filteredGeojson = {
   type: 'FeatureCollection',
   features: [],
 };
-
-/* const rangeSliderDate = 
-
-
-for (let i = 0; i < features.length; i++) {
-  const element = features[i];
-  
-} */
+const dateFilteredGeojson = {
+  type: 'FeatureCollection',
+  features: [],
+};
 
 const map = new mapboxgl.Map({
   container: 'map',
@@ -69,28 +65,7 @@ function flyToLocation(currentFeature) {
     //zoom: 5,
   });
 }
-//RANGE SLIDER
-//issue is that the decade data of GeoJSON is taken as string not int/float, and i don't know how to convert. ParseInt fucked up things.
-/*
-var sliderOptions = {
-  elm: 'slider-control',
-  layer: 'locationData',
-  source: 'locationData',
-  controlWidth: '200px',
-  minProperty: parseInt('initial_date'),
-  maxProperty: parseInt('initial_date'),
-  sliderMin: 0,
-  sliderMax: 2000,
-  //filterMin: 2005,
-  //filterMax: 2023,
-  propertyType: 'integer',
-  rangeDescriptionFormat: 'integer',
-  descriptionPrefix: 'Year:'
-}
 
-map.addControl(new RangeSlider(sliderOptions, 'top-right'));
-
-*/
 
 //POP-UP Feature; 
 function createPopup(currentFeature) {
@@ -286,6 +261,83 @@ function buildCheckbox(title, listItems, listTitles) {
   filtersDiv.appendChild(mainDiv);
 }
 
+
+
+//query date data for min,max etc
+
+var rangeOptions = {
+  layer: 'locationData',
+  source: 'locationData',
+  dateProperty: 'initial_date',
+  rangeMin: -2000,
+  rangeMax: 2030,
+  valueMin: -2000,
+  valueMax: 2000,
+  step: 100,
+};
+
+//Slider
+//step not working yet
+
+var lowerSlider = document.getElementById('lower'),
+  upperSlider = document.getElementById('upper'),
+  lowerNumber = document.getElementById('lowerInput'),
+  upperNumber = document.getElementById('upperInput'),
+  lowerVal = parseInt(lowerSlider.value),
+  upperVal = parseInt(upperSlider.value),
+  sliders = document.getElementsByClassName("slider");
+
+map.on('load', () => {
+  lowerSlider.value = rangeOptions.valueMin,
+  lowerNumber.value = rangeOptions.valueMin,
+  upperSlider.value = rangeOptions.valueMax,
+  upperNumber.value = rangeOptions.valueMax,
+  sliders.min = rangeOptions.min,
+  sliders.step = rangeOptions.step,
+  sliders.max = rangeOptions.rangeMax;
+});
+
+upperSlider.oninput = function() {
+   lowerVal = parseInt(lowerSlider.value);
+   upperVal = parseInt(upperSlider.value);
+   
+   if (upperVal < lowerVal + 4) {
+      lowerSlider.value = upperVal - 4;
+      
+      if (lowerVal == lowerSlider.min) {
+         upperSlider.value = 4;
+      }
+   }
+};
+
+
+lowerSlider.oninput = function() {
+   lowerVal = parseInt(lowerSlider.value);
+   upperVal = parseInt(upperSlider.value);
+   
+   if (lowerVal > upperVal - 4) {
+      upperSlider.value = lowerVal + 4;
+      
+      if (upperVal == upperSlider.max) {
+         lowerSlider.value = parseInt(upperSlider.max) - 4;
+      }
+
+   }
+};
+
+for (let i = 0; i < locationData.length; i++) {
+  if (currentFeature[i]==='') {
+    
+  } else {
+    
+  }
+
+  const element = locationData[i];
+  
+}
+
+
+
 // Filters push filtered values in array
 
 const selectFilters = [];
@@ -311,6 +363,8 @@ function createFilterObject(filterSettings) {
     }
   });
 }
+
+
 
 //filters get applied to map
 
@@ -350,6 +404,8 @@ function applyFilters() {
         });
       }
     });
+
+
 
     if (geojCheckboxFilters.length === 0 && geojSelectFilters.length === 0) {
       geojsonData.features.forEach((feature) => {
@@ -413,6 +469,21 @@ function applyFilters() {
           filteredGeojson.features.push(feature);
         }
       });
+    }
+
+    const dateFilter = rangeOptions.dateProperty;
+
+
+    for (let i = 0; i < filteredGeojson.length; i++) {
+      if (filteredGeojson[i].properties.dateFilter >= lowerVal && filteredGeojson[i].properties.dateFilter <= upperVal) {
+        filteredGeojson[i]
+      } else if (filteredGeojson[i].properties.dateFilter === '') {
+        //push the value to dateFilteredGeojson
+      } else {
+
+
+      }
+      
     }
 
     map.getSource('locationData').setData(filteredGeojson);
@@ -601,70 +672,6 @@ hideFilters.addEventListener('click', () => {
   showFilters.style.display = 'block';
   hideFilters.style.display = 'none';
 });
-
-//query date data for min,max etc
-
-var rangeOptions = {
-  layer: 'locationData',
-  source: 'locationData',
-  dateProperty: 'initial_date',
-  rangeMin: -2000,
-  rangeMax: 2030,
-  valueMin: -2000,
-  valueMax: 2000,
-  step: 10,
-  propertyType: 'integer',
-  rangeDescriptionFormat: 'integer',
-}
-
-
-//Slider
-
-
-
-var lowerSlider = document.querySelector('#lower'),
-  upperSlider = document.querySelector('#upper'),
-  lowerVal = parseInt(lowerSlider.value),
-  upperVal = parseInt(upperSlider.value);
-
-document.getElementById('lower').step = rangeOptions.step;
-document.getElementById('lower'||'upperInput').value = rangeOptions.valueMin;
-document.querySelectorAll('input').min = rangeOptions.rangeMin;
-document.querySelectorAll('input').step = rangeOptions.step;
-document.querySelectorAll('input').max = rangeOptions.rangeMax;
-
-
-
-upperSlider.oninput = function() {
-   lowerVal = parseInt(lowerSlider.value);
-   upperVal = parseInt(upperSlider.value);
-   
-   if (upperVal < lowerVal + 4) {
-      lowerSlider.value = upperVal - 4;
-      
-      if (lowerVal == lowerSlider.min) {
-         upperSlider.value = 4;
-      }
-   }
-};
-
-
-lowerSlider.oninput = function() {
-   lowerVal = parseInt(lowerSlider.value);
-   upperVal = parseInt(upperSlider.value);
-   
-   if (lowerVal > upperVal - 4) {
-      upperSlider.value = lowerVal + 4;
-      
-      if (upperVal == upperSlider.max) {
-         lowerSlider.value = parseInt(upperSlider.max) - 4;
-      }
-
-   }
-};
-
-
-
 
 
 

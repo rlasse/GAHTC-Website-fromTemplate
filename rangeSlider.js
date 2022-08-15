@@ -182,6 +182,9 @@ RangeSlider.prototype.setRanges = function() {
     }
 }
 
+
+
+
 RangeSlider.prototype.calculateMinMaxValuesForLayer = function(map) {
     var source = map.getSource(this.options.source);
 

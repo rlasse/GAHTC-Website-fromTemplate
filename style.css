@@ -224,7 +224,7 @@ class to change color
 input[type=range] {
   box-sizing: border-box;
   appearance: none;
-  width: 90%;
+  width: 80%;
   margin: 0;
   /*padding: 0 2px;*/
   /* Add some L/R padding to ensure box shadow of handle is shown */
@@ -266,7 +266,7 @@ input[type=range]::-webkit-slider-thumb::before {
 
 .multi-range {
   position: relative;
-  padding: 12px;
+  padding: 24px;
   width: inherit;
   height: 50px;
 }
@@ -281,6 +281,69 @@ input[type=range]::-webkit-slider-thumb::before {
 }
 .multi-range input[type=range]:nth-child(2)::-webkit-slider-thumb::before {
   background-color: grey;
+}
+
+.range-value {
+  position: absolute;
+  top: -50%;
+}
+
+.range-value span {
+  width: 30px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  background: #03a9f4;
+  color: #fff;
+  font-size: 12px;
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-radius: 6px;
+}
+
+.range-value span:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 10px solid #03a9f4;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  margin-top: -1px;
+}
+
+/*
+
+.bubble {
+  background: black;
+  margin-top: 35px;
+  color: white;
+  padding: 4px 12px;
+  position: absolute;
+  border-radius: 4px;
+  transform: translateX(-50%);
+}*/
+.bubble::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: red;
+  top: -20px;
+  left: 50%;
+}
+
+#lowerBubble {
+  left: 0;
+}
+
+#upperBubble {
+  right: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

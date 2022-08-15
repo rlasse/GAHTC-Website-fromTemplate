@@ -262,6 +262,14 @@ function buildCheckbox(title, listItems, listTitles) {
 }
 
 
+function setDateFilter(l, u) {
+  const dateFilter = ['all',
+  ['>=', 'initial_date', l],
+  ['<=', 'initial_date', u]];
+  map.setFilter('locationData', dateFilter);
+  console.log(l,u);
+}
+
 
 //query date data for min,max etc
 
@@ -285,17 +293,23 @@ var lowerSlider = document.getElementById('lower'),
   upperNumber = document.getElementById('upperInput'),
   lowerVal = parseInt(lowerSlider.value),
   upperVal = parseInt(upperSlider.value),
-  sliders = document.getElementsByClassName("slider");
+  sliders = document.querySelectorAll('.slider'),
+  bubbles = document.querySelectorAll('.bubble');
 
+
+/*
 map.on('load', () => {
+  sliders.min = rangeOptions.min,
+  sliders.step = rangeOptions.step,
+  sliders.max = rangeOptions.rangeMax;
   lowerSlider.value = rangeOptions.valueMin,
   lowerNumber.value = rangeOptions.valueMin,
   upperSlider.value = rangeOptions.valueMax,
   upperNumber.value = rangeOptions.valueMax,
-  sliders.min = rangeOptions.min,
-  sliders.step = rangeOptions.step,
-  sliders.max = rangeOptions.rangeMax;
-});
+  console.log(lowerSlider.value);
+});*/
+
+var updateCount = 0;
 
 upperSlider.oninput = function() {
    lowerVal = parseInt(lowerSlider.value);
@@ -308,12 +322,13 @@ upperSlider.oninput = function() {
          upperSlider.value = 4;
       }
    }
+   setDateFilter(lowerVal, upperVal);
 };
-
 
 lowerSlider.oninput = function() {
    lowerVal = parseInt(lowerSlider.value);
    upperVal = parseInt(upperSlider.value);
+   updateCount++;
    
    if (lowerVal > upperVal - 4) {
       upperSlider.value = lowerVal + 4;
@@ -323,8 +338,64 @@ lowerSlider.oninput = function() {
       }
 
    }
+   setDateFilter(lowerVal, upperVal);
 };
 
+
+//range tooltip
+
+const
+	range = document.querySelectorAll('.slider'),
+	rangeV = document.querySelectorAll('.range-value');
+  console.log(rangeV);
+
+function setValue(x) {
+  const
+    newValue = Number( (range[x].value - range[x].min) * 80 / (range[x].max - range[x].min) ),
+    newPosition = 10 - (newValue * 0.2);
+  rangeV[x].innerHTML = `<span>${range.value}</span>`;
+  rangeV[x].style.left = `calc(${newValue}% + (${newPosition}px))`;
+};
+
+for (let i = 0; i < range.length; i++) {
+  document.addEventListener("DOMContentLoaded", setValue(i)),
+  range[i].addEventListener('input', setValue(i));
+}
+
+
+
+/*
+for (let i = 0; i < sliders.length; i++) {
+  sliders[i].addEventListener("input", () => {
+    setBubble(sliders[i], bubbles[i]);
+  });
+  setBubble(sliders[i], bubbles[i]);
+  console.log(bubbles[i].value);
+}
+
+function setBubble(s, b) {
+  const val = s.value;
+  const min = s.min ? s.min : 0;
+  const max = s.max ? s.max : 100;
+  const newVal = Number(((val - min) * 80) / (max - min));
+  b.innerHTML = val;
+
+  //Sorta magic numbers based on size of the native UI thumb
+  b.style.left = `calc(${newVal}% + (${8 - newVal * 0.15}px))`;
+}
+
+*/
+
+
+/*
+if (updateCount !== 0) {
+  var keepFeats = feats.filter(function(f) {
+    return (that.rangeFeatureFilter(f, vals))
+};
+*/
+
+
+/*
 for (let i = 0; i < locationData.length; i++) {
   if (currentFeature[i]==='') {
     
@@ -335,7 +406,7 @@ for (let i = 0; i < locationData.length; i++) {
   const element = locationData[i];
   
 }
-
+*/
 
 
 // Filters push filtered values in array
@@ -470,22 +541,6 @@ function applyFilters() {
         }
       });
     }
-
-    const dateFilter = rangeOptions.dateProperty;
-
-
-    for (let i = 0; i < filteredGeojson.length; i++) {
-      if (filteredGeojson[i].properties.dateFilter >= lowerVal && filteredGeojson[i].properties.dateFilter <= upperVal) {
-        filteredGeojson[i]
-      } else if (filteredGeojson[i].properties.dateFilter === '') {
-        //push the value to dateFilteredGeojson
-      } else {
-
-
-      }
-      
-    }
-
     map.getSource('locationData').setData(filteredGeojson);
     buildLocationList(filteredGeojson);
   });
@@ -672,8 +727,6 @@ hideFilters.addEventListener('click', () => {
   showFilters.style.display = 'block';
   hideFilters.style.display = 'none';
 });
-
-
 
 
 function transformRequest(url) {

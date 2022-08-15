@@ -199,10 +199,14 @@
 }
 
 .vertical-menu {
+    top: 200px;
+    width: 200px;
+    z-index: 10;
+}
+
+.vertical-menu a {
     color: white;
-    display: block;
-    top: 12;
-    z-index: 7;
+    background-color: orange;
 }
 
 

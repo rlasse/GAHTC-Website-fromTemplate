@@ -183,6 +183,16 @@
     color: white;
 }
 
+.sidebar-heading {
+    position: sticky;
+    background: black;
+    border-bottom: 1px solid #eee;
+    min-height: 60px;
+    line-height: 60px;
+    padding: 0 10px;
+    color: white;
+}
+
 /*Map location*/
 
 .map {

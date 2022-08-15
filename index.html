@@ -29,19 +29,25 @@
     <div id="sidebar-button" class="sidebar-button">
         <button id="showFilters" class="btn bg-black h48 w48 py6 px6 relative">
             <svg class='icon inline-block align-middle h24 w24'>
-                <use xlink:href='#icon-filter'/></svg>
+                <use href='#icon-filter'/></svg>
         </button>
-        <button id="hideFilters" class="btn color-black bg-white btn--stroke h48 w48 py6 px6 relative">
+        <button id="hideFilters" class="btn color-white bg-black h48 w48 py6 px6 relative">
             <svg class='icon inline-block align-middle h24 w24'>
-                <use xlink:href='#close'/></svg>
+                <use href='#icon-close'/></svg>
         </button>
     </div>
     <div id="sidebar" class="sidebar">
+        
+        <div class="sidebar-heading">
+            <h1>Filters</h1>
+        </div>
+        
         <form id="filters"></form>
         <script src="rangeSlider.js"></script>
+        
         <div class="sidebar-child">
             <div class="heading">
-                <h1>Buildings</h1>
+                <h1>Projects</h1>
             </div>
             <div id="listings" class="listings"></div>
         </div>

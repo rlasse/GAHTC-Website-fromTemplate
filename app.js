@@ -428,6 +428,7 @@ function filters(filterSettings) {
   });
 }
 
+/*
 function removeFilters() {
   const input = document.getElementsByTagName('input');
   const select = document.getElementsByTagName('select');
@@ -440,6 +441,8 @@ function removeFilters() {
     }
   });
 
+
+
   selectOption.forEach((option) => {
     option.selectedIndex = 0;
   });
@@ -447,18 +450,20 @@ function removeFilters() {
   map.getSource('locationData').setData(geojsonData);
   buildLocationList(geojsonData);
 }
-
+*/
+/*
 function removeFiltersButton() {
   const removeFilter = document.getElementById('removeFilters');
   removeFilter.addEventListener('click', () => {
     removeFilters();
   });
 }
+*/
 
 createFilterObject(filterconfigs);
 applyFilters();
 filters(filterconfigs);
-removeFiltersButton();
+//removeFiltersButton();
 
 
 function sortByDistance(selectedPoint) {
@@ -598,28 +603,6 @@ hideFilters.addEventListener('click', () => {
 
 
 
-
-
-
-
-// Modal - popup for filtering results
-const filterResults = document.getElementById('filterResults');
-const exitButton = document.getElementById('exitButton');
-const modal = document.getElementById('modal');
-
-filterResults.addEventListener('click', () => {
-  modal.classList.remove('hide-visually');
-  modal.classList.add('z5');
-});
-
-exitButton.addEventListener('click', () => {
-  modal.classList.add('hide-visually');
-});
-
-const title = document.getElementById('title');
-title.innerText = config.title;
-const description = document.getElementById('description');
-description.innerText = config.description;
 
 function transformRequest(url) {
   const isMapboxRequest =

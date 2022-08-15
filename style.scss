@@ -222,7 +222,7 @@
     top: 0;
     bottom: 0;
     z-index: 1;
-    background-color: #121212;
+    /*background-color: #121212;*/
 }
 
 .listings {
@@ -243,4 +243,30 @@ class to change color
 }
 */
 
-  
+/*dual rangeslider*/
+
+input[type=range] {
+    box-sizing: border-box;
+    appearance: none;
+    width: 100px;
+    margin: 0;
+    padding: 0 2px;
+    /* Add some L/R padding to ensure box shadow of handle is shown */
+    overflow: hidden;
+    border: 0;
+    border-radius: 1px;
+    outline: none;
+    background: linear-gradient(grey, grey) no-repeat center;
+    /* Use a linear gradient to generate only the 2px height background */
+    background-size: 100% 2px;
+    pointer-events: none;
+    z-index: 5;
+
+    &:active,
+    &:focus {
+       outline: none;
+    }
+}
+
+
+

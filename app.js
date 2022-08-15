@@ -71,16 +71,16 @@ function flyToLocation(currentFeature) {
 }
 //RANGE SLIDER
 //issue is that the decade data of GeoJSON is taken as string not int/float, and i don't know how to convert. ParseInt fucked up things.
-
+/*
 var sliderOptions = {
   elm: 'slider-control',
   layer: 'locationData',
   source: 'locationData',
-  controlWidth: '400px',
-  minProperty: 'initial_date',
-  maxProperty: 'initial_date',
-  //sliderMin: 2000,
-  //sliderMax: 2030,
+  controlWidth: '200px',
+  minProperty: parseInt('initial_date'),
+  maxProperty: parseInt('initial_date'),
+  sliderMin: 0,
+  sliderMax: 2000,
   //filterMin: 2005,
   //filterMax: 2023,
   propertyType: 'integer',
@@ -90,13 +90,7 @@ var sliderOptions = {
 
 map.addControl(new RangeSlider(sliderOptions, 'top-right'));
 
-
-var filterList = ['any',
-  ['==', ['number', ['get', 'DataProviderType']], 4],
-  ['==', ['number', ['get', 'DataProviderType']], 6],
-  ['==', ['number', ['get', 'DataProviderType']], 8],
-];
-
+*/
 
 //POP-UP Feature; 
 function createPopup(currentFeature) {
@@ -507,11 +501,6 @@ function sortByDistance(selectedPoint) {
   buildLocationList(data);
 }
 
-//geocoder.on('result', (ev) => {
-  //const searchResult = ev.result.geometry;
-  //sortByDistance(searchResult);
-//});
-
 map.on('load', () => {
 
   // csv2geojson - following the Sheet Mapper tutorial https://www.mapbox.com/impact-tools/sheet-mapper
@@ -589,6 +578,8 @@ map.on('load', () => {
     buildLocationList(geojsonData);
   }
 });
+
+
 
 //Buttons
 

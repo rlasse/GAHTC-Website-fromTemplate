@@ -685,9 +685,6 @@ map.on('load', () => {
         });
       },
     );
-    featureById = {}
-    geojsonData.features.forEach(f => featureById[f.id] = f)
-    
 
     //Fly to Location
     map.on('click', 'locationData', (e) => {

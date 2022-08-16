@@ -67,6 +67,9 @@ function flyToLocation(currentFeature) {
 }
 
 
+
+
+
 //POP-UP Feature; 
 function createPopup(currentFeature) {
   const popups = document.getElementsByClassName('mapboxgl-popup');
@@ -343,7 +346,7 @@ lowerSlider.oninput = function() {
 
 
 //range tooltip
-
+/*
 const
 	range = document.querySelectorAll('.slider'),
 	rangeV = document.querySelectorAll('.range-value');
@@ -361,7 +364,7 @@ for (let i = 0; i < range.length; i++) {
   document.addEventListener("DOMContentLoaded", setValue(i)),
   range[i].addEventListener('input', setValue(i));
 }
-
+*/
 
 
 /*
@@ -682,6 +685,9 @@ map.on('load', () => {
         });
       },
     );
+    featureById = {}
+    geojsonData.features.forEach(f => featureById[f.id] = f)
+    
 
     //Fly to Location
     map.on('click', 'locationData', (e) => {
@@ -704,6 +710,8 @@ map.on('load', () => {
     buildLocationList(geojsonData);
   }
 });
+
+
 
 
 

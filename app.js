@@ -269,7 +269,6 @@ function setDateFilter(l, u) {
   ['>=', 'initial_date', l],
   ['<=', 'initial_date', u]];
   map.setFilter('locationData', dateFilter);
-  console.log(l,u);
 }
 
 function setDateFilterWithNulls(l, u) {
@@ -280,7 +279,6 @@ function setDateFilterWithNulls(l, u) {
       ['<=', 'initial_date', u]]
   ];
   map.setFilter('locationData', dateFilterNull);
-  //console.log(l,u);
 }
 
 
@@ -298,16 +296,14 @@ var rangeOptions = {
 };
 
 //Slider
-//step not working yet
 
-var lowerSlider = document.getElementById('lower'),
-  upperSlider = document.getElementById('upper'),
-  lowerNumber = document.getElementById('lowerInput'),
-  upperNumber = document.getElementById('upperInput'),
+var lowerSlider = document.getElementById('lowerSlider'),
+  upperSlider = document.getElementById('upperSlider'),
+  lowerInput = document.getElementById('lowerInput'),
+  upperInput = document.getElementById('upperInput'),
   lowerVal = parseInt(lowerSlider.value),
   upperVal = parseInt(upperSlider.value),
-  sliders = document.querySelectorAll('.slider'),
-  bubbles = document.querySelectorAll('.bubble');
+  sliders = document.querySelectorAll('.slider');
 
 
 /*
@@ -353,6 +349,65 @@ lowerSlider.oninput = function() {
    }
    setDateFilterWithNulls(lowerVal, upperVal);
 };
+
+
+function controlLowerInput(lowerSlider, lowerInput, upperInput) {
+  const [lower, upper] = getParsed(lowerInput, upperInput);
+  if (lower > upper) {
+      lowerSlider.value = upper;
+      lowerInput.value = upper;
+  } else {
+      lowerSlider.value = lower;
+  }
+  setDateFilterWithNulls(lower,upper);
+}
+  
+function controlUpperInput(upperSlider, lowerInput, upperInput) {
+  const [lower, upper] = getParsed(lowerInput, upperInput);
+  if (lower <= upper) {
+      upperSlider.value = upper;
+      upperInput.value = upper;
+  } else {
+      upperInput.value = lower;
+  }
+  setDateFilterWithNulls(lower,upper);
+}
+
+function controlLowerSlider(lowerSlider, upperSlider, lowerInput) {
+  const [lower, upper] = getParsed(lowerSlider, upperSlider);
+    if (lower > upper) {
+    lowerSlider.value = upper;
+    lowerInput.value = upper;
+  } else {
+    lowerInput.value = lower;
+  }
+  setDateFilterWithNulls(lower,upper);
+}
+
+function controlUpperSlider(lowerSlider, upperSlider, upperInput) {
+  const [lower, upper] = getParsed(lowerSlider, upperSlider);
+  if (lower <= upper) {
+    upperSlider.value = upper;
+    upperInput.value = upper;
+  } else {
+    upperInput.value = lower;
+    upperSlider.value = lower;
+  }
+  setDateFilterWithNulls(lower,upper);
+}
+
+function getParsed(currentLower, currentUpper) {
+  const lower = parseInt(currentLower.value, 10);
+  const upper = parseInt(currentUpper.value, 10);
+  return [lower, upper];
+}
+
+lowerSlider.oninput = () => controlLowerSlider(lowerSlider, upperSlider, lowerInput);
+upperSlider.oninput = () => controlUpperSlider(lowerSlider, upperSlider, upperInput);
+lowerInput.oninput = () => controlLowerInput(lowerSlider, lowerInput, upperInput, upperSlider);
+upperInput.oninput = () => controlUpperInput(upperSlider, lowerInput, upperInput, upperSlider);
+
+
 
 
 //range tooltip

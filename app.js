@@ -50,10 +50,17 @@ const map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/mapbox/satellite-v9',
   // center: [-120.234, 47.398],
-  zoom: 2,
+  //zoom: 2,
   projection: 'globe',
   transformRequest: transformRequest,
 });
+
+var mq = window.matchMedia( "(min-width: 420px)" );
+if (mq.matches){
+    map.setZoom(2); //set map zoom level for desktop size
+} else {
+    map.setZoom(1); //set map zoom level for mobile size
+};
 
 function flyToLocation(currentFeature) {
   map.flyTo({
@@ -281,6 +288,11 @@ function setDateFilterWithNulls(l, u) {
   map.setFilter('locationData', dateFilterNull);
 }
 
+/*
+function setFilterUnknownDates() {
+  
+}
+*/
 
 //query date data for min,max etc
 

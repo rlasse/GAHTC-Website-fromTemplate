@@ -17,11 +17,6 @@
     <script src='https://npmcdn.com/csv2geojson@latest/csv2geojson.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <link rel='stylesheet' href="style.css" />
-    <!-- Slider -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/11.1.0/nouislider.min.css" />
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/11.1.0/nouislider.min.js'></script>
-    <!-- Moment.js -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
 </head>
 
 <body>
@@ -57,7 +52,19 @@
                     <div class="form_control_container__time">Max</div>
                     <input class="form_control_container__time__input" type="number" id="upperInput" min="-8000" max="2000" value="2000" step="100"/>
                 </div>
-        </div>
+            </div>
+            <div class="ShowUnknownDates">
+                <h2 class="filterTitles">Show unknown dates:</h2>
+                <label class="checkbox-container">
+                    <input class="px12 filter-option" type="checkbox" checked="true" id="showUnknownDate" value="true">
+                    <div class="checkbox color-black mr6 bg-white border--black">
+                        <svg class="icon"><use xlink:href="#icon-check"></use></svg>
+                    </div>
+                    <p>Yes</p>
+                </label>
+                    
+
+            </div>
         <div class="sidebar-child">
             <div class="heading">
                 <h1>Projects</h1>

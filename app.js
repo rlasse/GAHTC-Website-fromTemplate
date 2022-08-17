@@ -664,7 +664,26 @@ map.on('load', () => {
           data.properties.id = i;
         });
 
-        geojsonData = data;
+        const parsedData = {
+          ...data,
+          features: data.features.map(function(feature) {
+            const { properties } = feature;
+            const { initial_date, final_date, decade } = properties;
+            return {
+              ...feature,
+              properties: {
+                ...properties,
+                initial_date: initial_date !== '' ? parseInt(initial_date) : initial_date,
+                final_date: final_date !== '' ? parseInt(final_date) : final_date,
+                decade: decade !== '' ? parseInt(decade) : decade,
+              }
+            }
+          }),
+        };
+
+        geojsonData = parsedData;
+
+        //geojsonData = data; without the parsing
         // Add the the layer to the map
         map.addLayer({
           id: 'locationData',

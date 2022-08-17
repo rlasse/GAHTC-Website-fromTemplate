@@ -25,7 +25,7 @@ const filterconfigs = [
     },
     {
       type: 'dropdown',
-      title: 'Includes floor plan ',
+      title: 'Includes floor plan: ',
       columnHeader: 'floor_plan_(Y/N)',
       listItems: [
         'Y',
@@ -183,14 +183,16 @@ function buildDropDownList(title, listItems, listTitles) {
   selectContainer.classList.add(/*'select-container', 'center', */'custom-select');
 
   const dropDown = document.createElement('select');
-  dropDown.classList.add('select', 'filter-option');
+  dropDown.classList.add('select', 'filter-option', 'select--green');
 
   const selectArrow = document.createElement('div');
   selectArrow.classList.add('select-arrow');
 
   const firstOption = document.createElement('option');
+  firstOption.setAttribute('id','option-1');
 
   dropDown.appendChild(firstOption);
+  firstOption.innerHTML = '-- Any --';
   selectContainer.appendChild(dropDown);
   selectContainer.appendChild(selectArrow);
   mainDiv.appendChild(selectContainer);
@@ -242,6 +244,7 @@ function buildCheckbox(title, listItems, listTitles) {
     input.classList.add('px12', 'filter-option');
     input.setAttribute('type', 'checkbox');
     input.setAttribute('id', listItems[i]);
+    input.setAttribute('checked', true);
     input.setAttribute('value', listItems[i]);
 
     const checkboxDiv = document.createElement('div');

@@ -29,6 +29,10 @@
   padding-left: 12px;
 }
 
+#option-1 {
+  font-style: italic;
+}
+
 .filterTitles {
   font-weight: 800;
   padding-top: 12px;
@@ -134,7 +138,7 @@
 /* HTML sidebar */
 .sidebar {
   position: absolute;
-  border-radius: 10px;
+  border-radius: 24px;
   display: none;
   top: 30px;
   right: 30px;

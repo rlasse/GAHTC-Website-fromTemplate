@@ -200,7 +200,7 @@
   top: 0;
   bottom: 0;
   z-index: 1;
-  /*background-color: #121212;*/
+  background-color: #a9a9a9;
 }
 
 .listings {
@@ -301,6 +301,7 @@ input[type=range]::-webkit-slider-thumb::before {
   left: 50%;
   transform: translate(-50%, 0);
   border-radius: 6px;
+  z-index: 6;
 }
 
 .range-value span:before {
@@ -328,22 +329,5 @@ input[type=range]::-webkit-slider-thumb::before {
   border-radius: 4px;
   transform: translateX(-50%);
 }*/
-.bubble::after {
-  content: "";
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background: red;
-  top: -20px;
-  left: 50%;
-}
-
-#lowerBubble {
-  left: 0;
-}
-
-#upperBubble {
-  right: 0;
-}
 
 /*# sourceMappingURL=style.css.map */

@@ -142,6 +142,12 @@
   background-color: rgb(255, 255, 255);
 }
 
+@media only screen and (max-width: 600px) {
+  .sidebar {
+    left: 30px;
+    width: auto;
+  }
+}
 .filters-parent {
   padding-bottom: 50px;
 }

@@ -777,7 +777,7 @@ map.on('load', () => {
             //'circle-stroke-color': 'white',
             'circle-stroke-width': 4,
             'circle-stroke-color': 'transparent',
-            'circle-opacity': 0.7,
+            'circle-opacity': 0.85,
             'circle-color': 'white',
           },
         });

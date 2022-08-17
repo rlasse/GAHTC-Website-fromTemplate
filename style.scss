@@ -241,7 +241,7 @@ input[type=range] {
     appearance: none;
     width: 80%;
     margin: 0;
-    /*padding: 0 2px;*/
+    //padding: 0px 2px;
     /* Add some L/R padding to ensure box shadow of handle is shown */
     overflow: hidden;
     border: 0;
@@ -263,7 +263,7 @@ input[type=range] {
        border-radius: 15px;
        background-color: black;
        position: relative;
-       /*margin: 5px 0;*/
+       //margin: 5px 5px;
        /* Add some margin to ensure box shadow is shown */
        cursor: pointer;
        appearance: none;

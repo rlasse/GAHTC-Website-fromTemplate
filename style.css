@@ -3,10 +3,6 @@
   color: blue;
 }
 
-#sidebarA {
-  color: white;
-}
-
 #filterResults {
   font-size: 12px;
   color: white;
@@ -15,10 +11,6 @@
 
 #filters {
   padding-top: 6px;
-}
-
-.theme {
-  background-color: #2A395F;
 }
 
 /* ----SELECT STYLES---- */
@@ -230,7 +222,6 @@ input[type=range] {
   appearance: none;
   width: 80%;
   margin: 0;
-  /*padding: 0 2px;*/
   /* Add some L/R padding to ensure box shadow of handle is shown */
   overflow: hidden;
   border: 0;
@@ -250,7 +241,6 @@ input[type=range]::-webkit-slider-thumb {
   border-radius: 15px;
   background-color: black;
   position: relative;
-  /*margin: 5px 0;*/
   /* Add some margin to ensure box shadow is shown */
   cursor: pointer;
   appearance: none;

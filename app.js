@@ -55,6 +55,8 @@ const map = new mapboxgl.Map({
   transformRequest: transformRequest,
 });
 
+
+//change map zoom based on windom width
 var mq = window.matchMedia( "(min-width: 420px)" );
 if (mq.matches){
     map.setZoom(2); //set map zoom level for desktop size
@@ -336,11 +338,11 @@ upperSlider.oninput = function() {
    lowerVal = parseInt(lowerSlider.value);
    upperVal = parseInt(upperSlider.value);
    
-   if (upperVal < lowerVal + 4) {
-      lowerSlider.value = upperVal - 4;
+   if (upperVal < lowerVal + 100) {
+      lowerSlider.value = upperVal - 100;
       
       if (lowerVal == lowerSlider.min) {
-         upperSlider.value = 4;
+         upperSlider.value = 100;
       }
    }
    setDateFilterWithNulls(lowerVal, upperVal);
@@ -773,7 +775,7 @@ map.on('load', () => {
             'circle-radius': 4, // size of circles
             'circle-color': '#ffffff', // color of circles
             //'circle-stroke-color': 'white',
-            'circle-stroke-width': 2,
+            'circle-stroke-width': 4,
             'circle-stroke-color': 'transparent',
             'circle-opacity': 0.7,
             'circle-color': 'white',

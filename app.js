@@ -45,10 +45,6 @@ const filteredGeojson = {
   type: 'FeatureCollection',
   features: [],
 };
-const dateFilteredGeojson = {
-  type: 'FeatureCollection',
-  features: [],
-};
 
 const map = new mapboxgl.Map({
   container: 'map',
@@ -264,13 +260,24 @@ function buildCheckbox(title, listItems, listTitles) {
   filtersDiv.appendChild(mainDiv);
 }
 
-
+//we need to re-introduce null values of dates here again.
 function setDateFilter(l, u) {
   const dateFilter = ['all',
   ['>=', 'initial_date', l],
   ['<=', 'initial_date', u]];
   map.setFilter('locationData', dateFilter);
   console.log(l,u);
+}
+
+function setDateFilterWithNulls(l, u) {
+  const dateFilterNull = ['any',
+    ['==', 'initial_date', ''],
+    ['all',['!=', 'initial_date', ''],  
+      ['>=', 'initial_date', l],
+      ['<=', 'initial_date', u]]
+  ];
+  map.setFilter('locationData', dateFilterNull);
+  //console.log(l,u);
 }
 
 
@@ -325,7 +332,7 @@ upperSlider.oninput = function() {
          upperSlider.value = 4;
       }
    }
-   setDateFilter(lowerVal, upperVal);
+   setDateFilterWithNulls(lowerVal, upperVal);
 };
 
 lowerSlider.oninput = function() {
@@ -341,7 +348,7 @@ lowerSlider.oninput = function() {
       }
 
    }
-   setDateFilter(lowerVal, upperVal);
+   setDateFilterWithNulls(lowerVal, upperVal);
 };
 
 

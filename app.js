@@ -87,7 +87,7 @@ function createPopup(currentFeature) {
       .setHTML(`<h3>` + currentFeature.properties.story_title + `</h3>` + 
       `<h4>` + `<b>` + `Date: ` + `</b>` + `Unknown` + `</h4>` + 
       `<h4>` + `<b>` + `Architect/Patron: ` + `</b>` + currentFeature.properties.architect + `</h4>` +
-      `<h4>` + `<b>` + `Book: ` + `</b>` + currentFeature.properties.Author_Surname_1 + ', ' + currentFeature.properties.book_title + `, p. ` + currentFeature.properties.Page + `</h4>`)
+      `<h4>` + `<b>` + `Books: ` + `</b>` + currentFeature.properties.book_title + `</h4>`)
       .addTo(map);
   // if final date is empty
   } else if (currentFeature.properties.final_date === "") {
@@ -96,7 +96,7 @@ function createPopup(currentFeature) {
       .setHTML(`<h3>` + currentFeature.properties.story_title + `</h3>` + 
       `<h4>` + `<b>` + `Date: ` + `</b>` + currentFeature.properties.initial_date + `</h4>` + 
       `<h4>` + `<b>` + `Architect/Patron: ` + `</b>` + currentFeature.properties.architect + `</h4>` +
-      `<h4>` + `<b>` + `Book: ` + `</b>` + currentFeature.properties.Author_Surname_1 + ', ' + currentFeature.properties.book_title + `, p. ` + currentFeature.properties.Page + `</h4>`)
+      `<h4>` + `<b>` + `Books: ` + `</b>` + currentFeature.properties.book_title + `</h4>`)
       .addTo(map);
   // if initial and final date are available
   } else {
@@ -105,7 +105,7 @@ function createPopup(currentFeature) {
         .setHTML(`<h3>` + currentFeature.properties.story_title + `</h3>` + 
         `<h4>` + `<b>` + `Date: ` + `</b>` + currentFeature.properties.initial_date + ' to ' + currentFeature.properties.final_date + `</h4>` + 
         `<h4>` + `<b>` + `Architect/Patron: ` + `</b>` + currentFeature.properties.architect + `</h4>` +
-        `<h4>` + `<b>` + `Book: ` + `</b>` + currentFeature.properties.Author_Surname_1 + ', ' + currentFeature.properties.book_title + `, p. ` + currentFeature.properties.Page + `</h4>`)
+        `<h4>` + `<b>` + `Books: ` + `</b>` + currentFeature.properties.book_title + `</h4>`)
         .addTo(map);
   }
 }

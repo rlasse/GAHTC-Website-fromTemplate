@@ -1,6 +1,13 @@
-.body{
+body{
     font-family: Arial, Helvetica, sans-serif;
-    color: blue;
+}
+
+p2 {
+    font-size: 10px;
+    font-style: italic;
+    color: grey;
+    display: block;
+    text-align: center;
 }
 
 
@@ -184,6 +191,60 @@
     display: none;
 }
 
+
+//html menubar on the left hand side
+
+.menubar {
+    position: absolute;
+    border-radius: 24px;
+    display: none;
+    top: 30px;
+    left: 30px;
+    bottom: 30px;
+    width: 50%;
+    min-width: 300px;
+    /* border-left: 1px solid rgba(0, 0, 0, 0.25); */
+    overflow: scroll;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.menubar-button {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    z-index: 6;
+}
+
+#showMenu {
+    display: block;
+}
+
+#hideMenu {
+    display: none;
+}
+
+.menuContent {
+    padding: 12px 12px 12px 12px;
+}
+
+.chartImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+
+@media only screen and (max-width: 600px) {
+    .menubar {
+        right: 30px;
+        width: auto;
+    }
+    .chartImage {
+        width: 95%;
+    }
+  }
+
+
 /* HTML sidebar heading style; wanna make it sticky buyt it's not working */
 
 .heading {
@@ -207,6 +268,10 @@
     color: white;
 }
 
+
+.menubar .sidebar-heading {
+    padding-left: 60px;
+}
 
 
 

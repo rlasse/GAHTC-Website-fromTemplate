@@ -280,21 +280,23 @@ function setDateFilter(l, u) {
   map.setFilter('locationData', dateFilter);
 }
 
+//if function chooses between filter with unknown and without unknown dates, and chooses respectively
 function setDateFilterWithNulls(l, u) {
-  const dateFilterNull = ['any',
+  if (document.getElementById('showUnknownDate').checked) {
+    const dateFilterNull = ['any',
     ['==', 'initial_date', ''],
     ['all',['!=', 'initial_date', ''],  
       ['>=', 'initial_date', l],
       ['<=', 'initial_date', u]]
   ];
   map.setFilter('locationData', dateFilterNull);
+  } else {
+    const dateFilter = ['all',
+    ['>=', 'initial_date', l],
+    ['<=', 'initial_date', u]];
+  map.setFilter('locationData', dateFilter);
+  }
 }
-
-/*
-function setFilterUnknownDates() {
-  
-}
-*/
 
 //query date data for min,max etc
 
@@ -317,8 +319,8 @@ var lowerSlider = document.getElementById('lowerSlider'),
   upperInput = document.getElementById('upperInput'),
   lowerVal = parseInt(lowerSlider.value),
   upperVal = parseInt(upperSlider.value),
-  sliders = document.querySelectorAll('.slider');
-
+  sliders = document.querySelectorAll('.slider'),
+  UnknownDateBox = document.getElementById('showUnknownDate');
 
 /*
 map.on('load', () => {
@@ -351,7 +353,6 @@ upperSlider.oninput = function() {
 lowerSlider.oninput = function() {
    lowerVal = parseInt(lowerSlider.value);
    upperVal = parseInt(upperSlider.value);
-   updateCount++;
    
    if (lowerVal > upperVal - 4) {
       upperSlider.value = lowerVal + 4;
@@ -363,6 +364,14 @@ lowerSlider.oninput = function() {
    }
    setDateFilterWithNulls(lowerVal, upperVal);
 };
+
+UnknownDateBox.oninput = function () {
+  lowerVal = parseInt(lowerSlider.value);
+  upperVal = parseInt(upperSlider.value);
+  setDateFilterWithNulls(lowerVal, upperVal);
+};
+
+
 
 
 function controlLowerInput(lowerSlider, lowerInput, upperInput) {
@@ -421,74 +430,6 @@ upperSlider.oninput = () => controlUpperSlider(lowerSlider, upperSlider, upperIn
 lowerInput.oninput = () => controlLowerInput(lowerSlider, lowerInput, upperInput, upperSlider);
 upperInput.oninput = () => controlUpperInput(upperSlider, lowerInput, upperInput, upperSlider);
 
-
-
-
-//range tooltip
-/*
-const
-	range = document.querySelectorAll('.slider'),
-	rangeV = document.querySelectorAll('.range-value');
-  console.log(rangeV);
-
-function setValue(x) {
-  const
-    newValue = Number( (range[x].value - range[x].min) * 80 / (range[x].max - range[x].min) ),
-    newPosition = 10 - (newValue * 0.2);
-  rangeV[x].innerHTML = `<span>${range.value}</span>`;
-  rangeV[x].style.left = `calc(${newValue}% + (${newPosition}px))`;
-};
-
-for (let i = 0; i < range.length; i++) {
-  document.addEventListener("DOMContentLoaded", setValue(i)),
-  range[i].addEventListener('input', setValue(i));
-}
-*/
-
-
-/*
-for (let i = 0; i < sliders.length; i++) {
-  sliders[i].addEventListener("input", () => {
-    setBubble(sliders[i], bubbles[i]);
-  });
-  setBubble(sliders[i], bubbles[i]);
-  console.log(bubbles[i].value);
-}
-
-function setBubble(s, b) {
-  const val = s.value;
-  const min = s.min ? s.min : 0;
-  const max = s.max ? s.max : 100;
-  const newVal = Number(((val - min) * 80) / (max - min));
-  b.innerHTML = val;
-
-  //Sorta magic numbers based on size of the native UI thumb
-  b.style.left = `calc(${newVal}% + (${8 - newVal * 0.15}px))`;
-}
-
-*/
-
-
-/*
-if (updateCount !== 0) {
-  var keepFeats = feats.filter(function(f) {
-    return (that.rangeFeatureFilter(f, vals))
-};
-*/
-
-
-/*
-for (let i = 0; i < locationData.length; i++) {
-  if (currentFeature[i]==='') {
-    
-  } else {
-    
-  }
-
-  const element = locationData[i];
-  
-}
-*/
 
 
 // Filters push filtered values in array
@@ -814,14 +755,19 @@ map.on('load', () => {
 
 const showFilters = document.getElementById('showFilters');
 const sidebar = document.getElementById('sidebar');
-const sidebarButtonShow = document.getElementById('sidebar-button');
+const sidebarButton = document.getElementById('sidebar-button');
 const hideFilters = document.getElementById('hideFilters');
+const menubar = document.getElementById('menubar');
+const menubarButton = document.getElementById('menubar-button');
+const showMenu = document.getElementById('showMenu');
+const hideMenu = document.getElementById('hideMenu');
 
 showFilters.addEventListener('click', () => {
   sidebar.style.display = 'block';
   sidebar.classList.add('z5');
   showFilters.style.display = 'none';
   hideFilters.style.display = 'block';
+  //menubarButton.style.zIndex = 6;
 });
 
 hideFilters.addEventListener('click', () => {
@@ -829,7 +775,27 @@ hideFilters.addEventListener('click', () => {
   sidebar.classList.remove('z5');
   showFilters.style.display = 'block';
   hideFilters.style.display = 'none';
+  //menubarButton.style.zIndex = 8;
 });
+
+
+showMenu.addEventListener('click', () => {
+  menubar.style.display = 'block';
+  menubar.classList.add('z5');
+  showMenu.style.display = 'none';
+  hideMenu.style.display = 'block';
+  //sidebarButton.style.zIndex = 6;
+});
+
+hideMenu.addEventListener('click', () => {
+  menubar.style.display = 'none';
+  menubar.classList.remove('z5');
+  showMenu.style.display = 'block';
+  hideMenu.style.display = 'none';
+  //sidebarButton.style.zIndex = 8;
+});
+
+
 
 
 function transformRequest(url) {

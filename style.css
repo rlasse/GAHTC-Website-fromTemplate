@@ -1,6 +1,13 @@
-.body {
+body {
   font-family: Arial, Helvetica, sans-serif;
-  color: blue;
+}
+
+p2 {
+  font-size: 10px;
+  font-style: italic;
+  color: grey;
+  display: block;
+  text-align: center;
 }
 
 #filterResults {
@@ -172,8 +179,58 @@
   display: none;
 }
 
+.menubar {
+  position: absolute;
+  border-radius: 24px;
+  display: none;
+  top: 30px;
+  left: 30px;
+  bottom: 30px;
+  width: 50%;
+  min-width: 300px;
+  /* border-left: 1px solid rgba(0, 0, 0, 0.25); */
+  overflow: scroll;
+  background-color: rgb(255, 255, 255);
+}
+
+.menubar-button {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  z-index: 6;
+}
+
+#showMenu {
+  display: block;
+}
+
+#hideMenu {
+  display: none;
+}
+
+.menuContent {
+  padding: 12px 12px 12px 12px;
+}
+
+.chartImage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+}
+
+@media only screen and (max-width: 600px) {
+  .menubar {
+    right: 30px;
+    width: auto;
+  }
+  .chartImage {
+    width: 95%;
+  }
+}
 /* HTML sidebar heading style; wanna make it sticky buyt it's not working */
 .heading {
+  position: -webkit-sticky;
   position: sticky;
   background: black;
   border-bottom: 1px solid #eee;
@@ -185,6 +242,7 @@
 }
 
 .sidebar-heading {
+  position: -webkit-sticky;
   position: sticky;
   background: black;
   border-bottom: 1px solid #eee;
@@ -192,6 +250,10 @@
   line-height: 60px;
   padding-left: 12px;
   color: white;
+}
+
+.menubar .sidebar-heading {
+  padding-left: 60px;
 }
 
 /*Map location*/
@@ -225,7 +287,9 @@ class to change color
 /*dual rangeslider*/
 input[type=range] {
   box-sizing: border-box;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   width: 80%;
   margin: 0;
   /* Add some L/R padding to ensure box shadow of handle is shown */
@@ -249,7 +313,8 @@ input[type=range]::-webkit-slider-thumb {
   position: relative;
   /* Add some margin to ensure box shadow is shown */
   cursor: pointer;
-  appearance: none;
+  -webkit-appearance: none;
+          appearance: none;
   pointer-events: all;
   /*box-shadow: 0 1px 4px 0.5px rgba(0, 0, 0, 0.25);*/
   z-index: 2;
@@ -290,6 +355,4 @@ input[type=range]::-webkit-slider-thumb::before {
   justify-content: space-between;
   padding: 0 12px;
   color: #635a5a;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

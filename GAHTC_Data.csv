@@ -1,4 +1,4 @@
-﻿book_title,story_title,longitude,latitude,location,city,state,country,continent,century,decade,initial_date,final_date,unbuilt,architect,pg_gh,pg_img_gh,count_img_gh,fp_gh,pg_fp_gh,count_gh,pg_ha,pg_img_ha,count_img_ha,fp_ha,pg_fp_ha,count_ha,pg_mm,pg_img_mm,count_img_mm,fp_mm,pg_fp_mm,count_mm,pg_wh,pg_img_wh,count_img_wh,fp_wh,pg_fp_wh,count_wh
+﻿book_title,story_title,latitude,longitude,location,city,state,country,continent,century,decade,initial_date,final_date,unbuilt,architect,pg_gh,pg_img_gh,count_img_gh,fp_gh,pg_fp_gh,count_gh,pg_ha,pg_img_ha,count_img_ha,fp_ha,pg_fp_ha,count_ha,pg_mm,pg_img_mm,count_img_mm,fp_mm,pg_fp_mm,count_mm,pg_wh,pg_img_wh,count_img_wh,fp_wh,pg_fp_wh,count_wh
 A History of Architecture: Settings and Rituals,Golden North Hotel,59.4543905,-135.3179448,"Skagway, Alaska",Skagway,Alaska,United States,North America,19,1890,1898,,,,,,,,,,628,,1,N,,1,,,,,,,,,,,,
 A History of Architecture: Settings and Rituals,House of William M. Carson,40.7906871,-124.1673746,"Eureka, California",Eureka,California,United States,North America,19,1880,1884,1885,,Samuel Newsome; Joseph Newsome,,,,,,,650,,1,N,,1,,,,,,,,,,,,
 A History of Architecture: Settings and Rituals,Sea Ranch Condominium 1,38.7097547,-123.44899,"Sea Ranch, California",Sea Ranch,California,United States,North America,20,1960,1965,1972,,"Moore, Lyndon, Turnbull & Whitaker",,,,,,,730,,1,N,,1,,,,,,,,,,,,
@@ -126,7 +126,7 @@ A World History of Architecture,Swan Hotel,28.36479555,-81.55909679,"Orlando, Fl
 Modern Movements in Architecture,Vehicle Assembly Building,28.58632145,-80.65070212,"Cape Kennedy, Florida, USA",Cape Kennedy,Florida,United States,North America,20,1960,,,,Max O. Urbahn,,,,,,,,,,,,,217373,217,1,N,,2,,,,,,
 A World History of Architecture,The Breakwater,25.77998368,-80.13109803,"Miami Beach, Florida",Miami Beach,Florida,United States,North America,20,,1939,,N,Anton Skislewicz,,,,,,,,,,,,,,,,,,,499-500,500,1,N,,2
 Modern Movements in Architecture,Chestnut Hill House,42.0857376,-80.0863055,"Chestnut Hill, Pennsylvania, USA",Chestnut Hill,Pennsylvenia,United States,North America,20,1960,1965,,,Robert Venturi,,,,,,,,,,,,,218-220,218-220,3,Y,218-219,2,,,,,,
-A World History of Architecture,Seventh Street Bridge,40.44617402,-80.00137589,"Pittsburgh, Pennsylvania",Pittsburgh,Pennsylvania,United States,North America,20,,1925,1928,N,,,,,,,,,,,,,,,,,,,,4-5,5,1,N,,1
+A World History of Architecture,Seventh Street Bridge,40.44617402,-80.00137589,"Pittsburgh, Pennsylvania",Pittsburgh,Pennsylvania,United States,North America,20,,1925,1928,N,,,,,,,,,,,,,,,,,,,,5-Apr,5,1,N,,1
 Modern Movements in Architecture,Alcoa Building,40.4415091,-79.99676926,"Pittsburg, Pennsylvania",Pittsburg,Pennsylvania,United States,North America,20,1950,1955,,,"Wallace Harrison, Max Ambrovitz",,,,,,,,,,,,,201,201,1,N,,1,,,,,,
 A History of Architecture: Settings and Rituals,Allegheny County courthouse and Jail,40.4416941,-79.9900861,"Pittsburgh, Pennsylvania",Pittsburgh,Pennsylvania,United States,North America,19,1880,1884,1888,,Henry Hobson Richardson,,,,,,,658,,1,N,,1,,,,,,,,,,,,
 A History of Architecture: Settings and Rituals,Miles Brewton House,32.7876012,-79.9402728,"Charleston, South Carolina, United States",Charleston,South Carolina,United States,North America,18,1760,1765,1769,,,,,,,,,482,,1,N,,1,,,,,,,,,,,,
@@ -228,7 +228,7 @@ Modern Movements in Architecture,Montreal Tower Project,45.50428239,-73.52955556
 Modern Movements in Architecture,German Pavilion for Expo 67,45.50428239,-73.52955556,"Montreal, Canada",Montreal,,Canada,North America,20,1960,1967,,,Frei Otto,,,,,,,,,,,,,63,63,1,N,,1,,,,,,
 "Modern Movements in Architecture, A World History of Architecture",Glass House,41.14243185,-73.52926653,"New Canaan, Connecticut",New Canaan,Connecticut,United States,North America,20,1940,1949,,N,Philip Johnson,,,,,,,,,,,,,207,207,1,N,,1,522,,,N,,1
 A History of Architecture: Settings and Rituals,Marcel Breuer House,41.146763,-73.4948446,"New Canaan, Connecticut",New Canaan,Connecticut,United States,North America,20,1940,1947,,,Marcel Breuer,,,,,,,725,,1,N,,1,,,,,,,,,,,,
-A World History of Architecture,Ogden House,41.15946144,-73.2766964,"Fairfield, Connecticut",Fairfield,Connecticut,United States,North America,18,,1700,,N,David Ogden,,,,,,,,,,,,,,,,,,,6-7,7,3,Y,7,3
+A World History of Architecture,Ogden House,41.15946144,-73.2766964,"Fairfield, Connecticut",Fairfield,Connecticut,United States,North America,18,,1700,,N,David Ogden,,,,,,,,,,,,,,,,,,,7-Jun,7,3,Y,7,3
 A World History of Architecture,Cemetery Gates,41.3124928,-72.92708494,"New Haven, Connecticut",New Haven,Connecticut,United States,North America,19,,1837,,N,Henry Austin,,,,,,,,,,,,,,,,,,,419,,,N,,1
 "A History of Architecture: Settings and Rituals, Modern Movements in Architecture",Art and Architecture Building,41.3082138,-72.9250518,"New Haven, Connecticut",New Haven,Connecticut,United States,North America,20,1950,1958,1962,,Paul Rudolph,,,,,,,739,,1,N,,1,191,191,1,N,,1,,,,,,
 A History of Architecture: Settings and Rituals,Stanley Whitman House,41.7215704,-72.8247837,"Farmington, Connecticut",Farmington,Connecticut,United States,North America,17,1660,1664,,,Samuel Whitman,,,,,,,609,,1,N,,1,,,,,,,,,,,,
@@ -289,7 +289,7 @@ A Global History of Architecture,Municipal Theater,-22.9088109,-43.17654677,"Rio
 A Global History of Architecture,Ministry of Health and Education,-22.90864303,-43.17369619,"Rio de Janeiro, Brazil",Rio de Janeiro,,Brazil,South America,20,1930,1936,1946,,"Lucio Costa, Oscar Niemeyer","727,745-746",745-746,2,Y,746,3,,,,,,,,,,,,,,,,,,
 A Global History of Architecture,Touba Mosque,14.86318576,-15.87538657,"Touba, Senegal",Touba,,Senegal,Africa,20,1920,,,,,740,740,1,N,,1,,,,,,,,,,,,,,,,,,
 A History of Architecture: Settings and Rituals,Convent of Christ,39.60360005,-8.419928314,"Tomar, Portugal",Tomar,,Portugal,Europe,16,1520,1520,,,Diego da Arruda,,,,,,,434,,1,N,,1,,,,,,,,,,,,
-A World History of Architecture,Passage Grave at Newgrange,53.69473065,-6.475575448,"Newgrange, County Meath, Ireland",Newgrange,County Meath,Ireland,Europe,-32,,-3100,,N,,,,,,,,,,,,,,,,,,,,10-11,11,2,Y,11,3
+A World History of Architecture,Passage Grave at Newgrange,53.69473065,-6.475575448,"Newgrange, County Meath, Ireland",Newgrange,County Meath,Ireland,Europe,-32,,-3100,,N,,,,,,,,,,,,,,,,,,,,11-Oct,11,2,Y,11,3
 A History of Architecture: Settings and Rituals,S. Luis,37.3886303,-5.9953403,"Seville, Spain",Seville,,Spain,Europe,18,1730,1731,,,Leonardo da Fuigueroa,,,,,,,525,,1,N,,1,,,,,,,,,,,,
 A History of Architecture: Settings and Rituals,San Pedro de la Nave,41.58318475,-5.964028642,"El Campilo, Spain",El Campilo,,Spain,Europe,7,680,680,711,,,,,,,,,274,,1,N,,1,,,,,,,,,,,,
 A History of Architecture: Settings and Rituals,Mine Engine House,50.3621441,-5.0408438,"Cornwall, England",Cornwall,,England,Europe,,,,,,,,,,,,,603,,1,N,,1,,,,,,,,,,,,
@@ -327,7 +327,7 @@ A History of Architecture: Settings and Rituals,Ashton-under-Lyne Canal,53.47948
 A Global History of Architecture,Manchester City Hall,53.4793385,-2.244174372,"Manchester, England, UK",Manchester,,England,Europe,19,,,,,Alfred Waterhouse,662,662,1,N,,1,,,,,,,,,,,,,,,,,,
 A History of Architecture: Settings and Rituals,Stanley Mill,51.8333313,-2.1666674,"Gloucestershire, England",Gloucestershire,,England,Europe,19,1810,1813,,,,,,,,,,"599,601","599,601",2,N,,2,,,,,,,,,,,,
 A History of Architecture: Settings and Rituals,Contrasts,52.4363385,-1.8902996,,,,,,19,184,1841,,Y,Augustus Welby Pugin,,,,,,,588,,1,N,,1,,,,,,,,,,,,
-A World History of Architecture,Stonehenge,51.17879434,-1.826199588,"Salisbury Plain, England",Salisbury Plain,,England,Europe,-30,,-2900,-1400,N,,,,,,,,,,,,,,,,,,,,11-13,12-13,3,Y,13,4
+A World History of Architecture,Stonehenge,51.17879434,-1.826199588,"Salisbury Plain, England",Salisbury Plain,,England,Europe,-30,,-2900,-1400,N,,,,,,,,,,,,,,,,,,,,13-Nov,13-Dec,3,Y,13,4
 A History of Architecture: Settings and Rituals,Heathcote House,53.925,-1.822,"Illkley, England",Illkley,,England,Europe,20,1900,1906,,,Edwin Lutyens,,,,,,,682,,1,N,,1,,,,,,,,,,,,
 A History of Architecture: Settings and Rituals,Bridge in Puente la Reina,42.6717107,-1.8155291,"Puente la Reina, Spain",Puente la Reina,,Spain,Europe,11,1060,1065,1109,,Queen Urraca,,,,,,,299,,1,N,,1,,,,,,,,,,,,
 "A History of Architecture: Settings and Rituals, A World History of Architecture",Salisbury Cathedral,51.06495445,-1.797290687,"Salisbury, England",Salisbury,,England,Europe,13,1220,1220,1258,,,,,,,,,344-347,344-347,4,N,,4,,,,,,,247-250,248-250,3,Y,248,4
@@ -860,7 +860,7 @@ A World History of Architecture,Theater of Dionysos,37.9703053,23.73059553,"Athe
 A History of Architecture: Settings and Rituals,University of Athens,37.97003795,23.7652367,"Athens, Greece",Athens,,Greece,Europe,19,1830,1839,1850,,Hans Christian Hansen,,,,,,,583,,1,N,,1,,,,,,,,,,,,
 Modern Movements in Architecture,Pensions Bank,60.18814422,24.91756135,"Helsinki, Finland",Helsinky,,Finland,Europe,20,1950,1952,1956,,Alvar Aalto,,,,,,,,,,,,,180,180,1,N,,1,,,,,,
 A Global History of Architecture,Finnish Athenaeum,60.17028412,24.94413531,"Helsinki, Finland",Helsinki,,Finland,Europe,19,1880,1887,,,Theodor Höjer,666,666,1,N,,1,,,,,,,,,,,,,,,,,,
-A World History of Architecture,Palace at Knossos,35.2993746,25.1599695,"Knossos, Crete, Greece",Knossos,Crete,Greece,Europe,-18--14,,-1700,-1380,N,,,,,,,,,,,,,,,,,,,,38-42,"38,40,41,42",5,Y,40,5
+A World History of Architecture,Palace at Knossos,35.2993746,25.1599695,"Knossos, Crete, Greece",Knossos,Crete,Greece,Europe,-4,,-1700,-1380,N,,,,,,,,,,,,,,,,,,,,38-42,"38,40,41,42",5,Y,40,5
 "A Global History of Architecture, Modern Movements in Architecture, A World History of Architecture",Säynätsalo Town Hall,62.14024585,25.76883642,"Säynätsalo, Finland",Säynätsalo,,Finland,Europe,20,1950,1951,1952,,Alvar Aalto,726,,,,,1,,,,,,,172-175,172-175,4,N,,3,537,537,2,Y,537,3
 A History of Architecture: Settings and Rituals,"Edirne, Külliye of Bayazid II",41.67785765,26.5470763,"Edirne/Adrianople, Turkey",Edirne/Adrianople,,Turkey,Asia,15,1480,1484,1488,,Hayrettin,,,,,,,457,,1,N,,1,,,,,,,,,,,,
 "A History of Architecture: Settings and Rituals, A World History of Architecture",Selimiye Mosque,41.67785765,26.5470763,"Edirne/Adrianople, Turkey",Edirne/Adrianople,,Turkey,Asia,16,1560,1569,1575,,Koca Sinan,,,,,,,460,,1,Y,,1,,,,,,,183-184,184,2,Y,184,3
@@ -917,7 +917,7 @@ A World History of Architecture,Mentuhotep's Mortuary Temple,25.73745769,32.6063
 A History of Architecture: Settings and Rituals,New Gourna Village,25.73979205,32.63891811,"New Gourna, Egypt",New Gourna,,Egypt,Africa,20,1940,1945,1948,,Hassan Fathy,,,,,,,742,,1,N,,1,,,,,,,,,,,,
 A World History of Architecture,Great Temple of Amun,25.71852888,32.65798281,"Karnak, Egypt",Karnak,,Egypt,Africa,-14,,-1390,-1224,N,"Thutmose I, Hatshepsut, Thutmose III, and Ramesses II.",,,,,,,,,,,,,,,,,,,"9, 32-36","8, 33,34,35",4,Y,33,5
 A Global History of Architecture,Cankaya Presidential Mansion,39.9329956,32.79859829,"Ankara, Turkey",Ankara,,Turkey,Asia,20,1920,1927,,,Clemenz Holzmeister,741,741,1,N,,1,,,,,,,,,,,,,,,,,,
-A World History of Architecture,Çatal Hüyük,37.66648764,32.82576587,,,,Turkey,Asia,-66,,-6500,-5700,N,,,,,,,,,,,,,,,,,,,,9-10,10,2,N,,3
+A World History of Architecture,Çatal Hüyük,37.66648764,32.82576587,,,,Turkey,Asia,-66,,-6500,-5700,N,,,,,,,,,,,,,,,,,,,,10-Sep,10,2,N,,3
 A Global History of Architecture,Ankara Opera House,39.9354763,32.85318385,"Ankara, Turkey",Ankara,,Turkey,Asia,20,,,,,Sevki Balmumcu,741,,,,,1,,,,,,,,,,,,,,,,,,
 A Global History of Architecture,Grand National Assembly Hall,39.94216193,32.85347673,"Ankara, Turkey",Ankara,,Turkey,Asia,20,1920,1928,,,Clemenz Holzmeister,727,,,,,1,,,,,,,,,,,,,,,,,,
 A World History of Architecture,Obelisk,24.0769125,32.89541181,"Aswan, Egypt",Aswan,,Egypt,Africa,,,,,N,,,,,,,,,,,,,,,,,,,,23,23,,N,,1
@@ -1286,7 +1286,7 @@ A World History of Architecture,Amsterdam Stock Exchange,52.375, 4.896389,"Amst
 A World History of Architecture,Palace at Khorsabad,36.509444, 43.229444,"Khorsabad, Iraq",Khorsabad,,Iraq,Asia,-18,,-720,,N,,,,,,,,,,,,,,,,,,,,19-20,19,2,Y,19,3
 A World History of Architecture,Temple at Tepe Gawra,36.495556, 43.260278,"Tepe Gawra, Sumer (Iraq)",Tepe Gawra,,Iraq,Asia,-39,,-3800,,N,,,,,,,,,,,,,,,,,,,,15,15,1,N,,2
 A World History of Architecture,Church of the Nativity of the Virgin,56.32688, 43.98672,"Novgorod, Russia",Novgorod,,Russia,Europe,16,,1593,,N,,,,,,,,,,,,,,,,,,,,160-161,161,1,N,,2
-A World History of Architecture,White Temple,31.324167, 45.637222,"Uruk, Mesopotamia (Iraq)",Uruk,,Iraq,Asia,-36--31,,-3500,-3000,N,,,,,,,,,,,,,,,,,,,,15-16,16,1,Y,16,2
+A World History of Architecture,White Temple,31.324167, 45.637222,"Uruk, Mesopotamia (Iraq)",Uruk,,Iraq,Asia,-5,,-3500,-3000,N,,,,,,,,,,,,,,,,,,,,15-16,16,1,Y,16,2
 "A Global History of Architecture, A World History of Architecture",Masjid-i-Shah Mosque,32.654444, 51.6775,"Isfahan, Iran",Isfahan,,Iran,Asia,17,1610,1611,1630,N,"Badi' al-Zaman Tuni, Ali Akbar al-Isfahani",532,532,3,Y,532,3,,,,,,,,,,,,,172-174,172-174,4,Y,172,5
 A World History of Architecture,Maidan-i-Shah,32.65745, 51.677778,"Isfahan, Iran",Isfahan,,Iran,Asia,16,,1590,1602,N,Shah Abbas,,,,,,,,,,,,,,,,,,,184-186,184,1,Y,184,2
 A World History of Architecture,The Friday Mosque,32.669722, 51.685278,"Isfahan, Iran",Isfahan,,Iran,Asia,8,16,,,N,,,,,,,,,,,,,,,,,,,,"164,172-173,185","162,172",2,Y,172,4

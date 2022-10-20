@@ -26,7 +26,7 @@ const filterconfigs = [
     {
       type: 'dropdown',
       title: 'Includes floor plan: ',
-      columnHeader: 'floor_plan_(Y/N)',
+      columnHeader: 'fp_overall',
       listItems: [
         'Y',
         'N',

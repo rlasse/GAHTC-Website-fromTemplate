@@ -116,6 +116,7 @@ function createPopup(currentFeature) {
       .setHTML(`<h3>` + currentFeature.properties.story_title + `</h3>` + 
       `<h4>` + `<b>` + `Date: ` + `</b>` + `Unknown` + `</h4>` + 
       `<h4>` + `<b>` + `Architect/Patron: ` + `</b>` + currentFeature.properties.architect + `</h4>` +
+      `<h4>` + `<b>` + `Total Mentions: ` + `</b>` + currentFeature.properties.count_overall + `</h4>` +
       `<h4>` + `<b>` + `Books: ` + `</b>` + pageNumbers(currentFeature.properties.book_title, currentFeature) + `</h4>`)
       .addTo(map);
   // if final date is empty
@@ -126,6 +127,7 @@ function createPopup(currentFeature) {
       .setHTML(`<h3>` + currentFeature.properties.story_title + `</h3>` + 
       `<h4>` + `<b>` + `Date: ` + `</b>` + currentFeature.properties.initial_date + `</h4>` + 
       `<h4>` + `<b>` + `Architect/Patron: ` + `</b>` + currentFeature.properties.architect + `</h4>` +
+      `<h4>` + `<b>` + `Total Mentions: ` + `</b>` + currentFeature.properties.count_overall + `</h4>` +
       `<h4>` + `<b>` + `Books: ` + `</b>` + pageNumbers(currentFeature.properties.book_title, currentFeature) + `</h4>`)
       
       .addTo(map);
@@ -136,6 +138,7 @@ function createPopup(currentFeature) {
         .setHTML(`<h3>` + currentFeature.properties.story_title + `</h3>` + 
         `<h4>` + `<b>` + `Date: ` + `</b>` + currentFeature.properties.initial_date + ' to ' + currentFeature.properties.final_date + `</h4>` + 
         `<h4>` + `<b>` + `Architect/Patron: ` + `</b>` + currentFeature.properties.architect + `</h4>` +
+        `<h4>` + `<b>` + `Total Mentions: ` + `</b>` + currentFeature.properties.count_overall + `</h4>` +
         `<h4>` + `<b>` + `Books: ` + `</b>` + pageNumbers(currentFeature.properties.book_title, currentFeature) + `</h4>`)
 
         .addTo(map);

@@ -71,9 +71,38 @@ function flyToLocation(currentFeature) {
   });
 }
 
+function pageNumbers(bookTitles, item) {
+  var pgNum = "";
 
+  if(bookTitles.includes("A Global History of Architecture")) {
 
+    pgNum = pgNum + "A Global History of Architecture, p. " + item.properties.pg_gh + "; "
 
+    } 
+
+  if(bookTitles.includes("A History of Architecture: Settings and Rituals")) {
+
+    pgNum = pgNum + "A History of Architecture: Settings and Rituals, p. " + item.properties.pg_ha + "; "
+
+  } 
+
+  if(bookTitles.includes("Modern Movements in Architecture")) {
+
+    pgNum = pgNum + "Modern Movements in Architecture, p. " + item.properties.pg_mm + "; "
+
+  } 
+
+  if(bookTitles.includes("A World History of Architecture")) {
+
+    pgNum = pgNum + "A World History of Architecture, p. " + item.properties.pg_wh + "; "
+
+  } 
+
+  pgNum = pgNum.slice(0,-2);
+  pgNum = pgNum + "."; 
+
+  return pgNum;
+}
 
 //POP-UP Feature; 
 function createPopup(currentFeature) {
@@ -87,16 +116,18 @@ function createPopup(currentFeature) {
       .setHTML(`<h3>` + currentFeature.properties.story_title + `</h3>` + 
       `<h4>` + `<b>` + `Date: ` + `</b>` + `Unknown` + `</h4>` + 
       `<h4>` + `<b>` + `Architect/Patron: ` + `</b>` + currentFeature.properties.architect + `</h4>` +
-      `<h4>` + `<b>` + `Books: ` + `</b>` + currentFeature.properties.book_title + `</h4>`)
+      `<h4>` + `<b>` + `Books: ` + `</b>` + pageNumbers(currentFeature.properties.book_title, currentFeature) + `</h4>`)
       .addTo(map);
   // if final date is empty
   } else if (currentFeature.properties.final_date === "") {
     new mapboxgl.Popup({ closeOnClick: true })
       .setLngLat(currentFeature.geometry.coordinates)
+
       .setHTML(`<h3>` + currentFeature.properties.story_title + `</h3>` + 
       `<h4>` + `<b>` + `Date: ` + `</b>` + currentFeature.properties.initial_date + `</h4>` + 
       `<h4>` + `<b>` + `Architect/Patron: ` + `</b>` + currentFeature.properties.architect + `</h4>` +
-      `<h4>` + `<b>` + `Books: ` + `</b>` + currentFeature.properties.book_title + `</h4>`)
+      `<h4>` + `<b>` + `Books: ` + `</b>` + pageNumbers(currentFeature.properties.book_title, currentFeature) + `</h4>`)
+      
       .addTo(map);
   // if initial and final date are available
   } else {
@@ -105,11 +136,11 @@ function createPopup(currentFeature) {
         .setHTML(`<h3>` + currentFeature.properties.story_title + `</h3>` + 
         `<h4>` + `<b>` + `Date: ` + `</b>` + currentFeature.properties.initial_date + ' to ' + currentFeature.properties.final_date + `</h4>` + 
         `<h4>` + `<b>` + `Architect/Patron: ` + `</b>` + currentFeature.properties.architect + `</h4>` +
-        `<h4>` + `<b>` + `Books: ` + `</b>` + currentFeature.properties.book_title + `</h4>`)
+        `<h4>` + `<b>` + `Books: ` + `</b>` + pageNumbers(currentFeature.properties.book_title, currentFeature) + `</h4>`)
+
         .addTo(map);
   }
 }
-      
 
 //Listings on the side
 function buildLocationList(locationData) {

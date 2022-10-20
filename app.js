@@ -52,6 +52,7 @@ const map = new mapboxgl.Map({
   // center: [-120.234, 47.398],
   //zoom: 2,
   projection: 'globe',
+  attributionControl: false, //hide the info button right side
   transformRequest: transformRequest,
 });
 

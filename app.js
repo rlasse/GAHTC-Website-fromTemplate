@@ -3,7 +3,7 @@
 
 
 mapboxgl.accessToken = "pk.eyJ1IjoidGhlamFtZXNoZWFyZCIsImEiOiJjbDZndjluN2YwMDF3M2JyeG52dHFoaXV1In0.clP391payV0qfNDtemgiag";
-const columnHeaders = ['story_title', 'architect', 'city'];
+const columnHeaders = ['story_title', 'architect', 'location'];
 
 const filterconfigs = [
     {

@@ -44,6 +44,7 @@ p2 {
     padding-top: 18px;
     padding-left: 12px;
     padding-right: 12px;
+    padding-bottom: 9px;
 }
 
 
@@ -359,9 +360,10 @@ input[type=range] {
  
 .multi-range {
 position: relative;
-padding: 24px;
+padding-left: 24px;
+padding-right: 24px;
 width: inherit;
-height: 50px;
+height: 25px;
     input[type=range] {
         position: absolute;
         
@@ -425,9 +427,6 @@ height: 50px;
     font-size: 70%;
     color: #999;
     clear: both;
-    }
-.my-legend a {
-    color: #777;
     }
 
 

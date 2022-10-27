@@ -394,36 +394,29 @@ height: 25px;
 
 
 
-.my-legend .legend-title {
-    text-align: left;
-    margin-bottom: 5px;
-    font-weight: bold;
-    font-size: 90%;
-    }
-.my-legend .legend-scale ul {
+.legend-scale ul {
     margin: 0;
     margin-bottom: 5px;
     padding: 0;
+    margin-left: 15px;
     float: left;
     list-style: none;
     }
-.my-legend .legend-scale ul li {
-    font-size: 80%;
+/*.my-legend .legend-scale ul li {
     list-style: none;
     margin-left: 0;
     line-height: 18px;
     margin-bottom: 2px;
-    }
-.my-legend ul.legend-labels li span {
+    }*/
+ul.legend-labels li span {
     display: block;
     float: left;
     height: 16px;
-    width: 30px;
-    margin-right: 5px;
-    margin-left: 0;
-    border: 1px solid #999;
+    width: 16px;
+    margin-right: 10px;
+    margin-left: 0px;
     }
-.my-legend .legend-source {
+.legend-source {
     font-size: 70%;
     color: #999;
     clear: both;

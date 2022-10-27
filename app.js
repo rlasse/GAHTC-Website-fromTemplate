@@ -252,7 +252,7 @@ function buildDropDownList(title, listItems, listTitles) {
   firstOption.setAttribute('id','option-1');
 
   dropDown.appendChild(firstOption);
-  firstOption.innerHTML = '-- Any --';
+  firstOption.innerHTML = 'Any';
   selectContainer.appendChild(dropDown);
   selectContainer.appendChild(selectArrow);
   mainDiv.appendChild(selectContainer);

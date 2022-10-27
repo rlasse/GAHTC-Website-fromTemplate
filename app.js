@@ -39,7 +39,7 @@ const filterconfigs = [
     {
       type: 'dropdown',
       title: 'Is built: ',
-      columnHeader: 'unbuilt',
+      columnHeader: 'built',
       listItems: [
         'Yes',
         'No',
@@ -132,7 +132,7 @@ function createPopup(currentFeature) {
       `<h4>` + `<b>` + `Architect/Patron: ` + `</b>` + currentFeature.properties.architect + `</h4>` +
       `<h4>` + `<b>` + `Total Mentions: ` + `</b>` + currentFeature.properties.count_overall + `</h4>` +
       `<h4>` + `<b>` + `Books: ` + `</b>` + pageNumbers(currentFeature.properties.book_title, currentFeature) + `</h4>` +
-      `<h4>` + `<b>` + `Built: ` + `</b>` +  currentFeature.properties.unbuilt + `</h4>`)
+      `<h4>` + `<b>` + `Built: ` + `</b>` +  currentFeature.properties.built + `</h4>`)
       .addTo(map);
   // if final date is empty
   } else if (currentFeature.properties.final_date === "") {
@@ -144,7 +144,7 @@ function createPopup(currentFeature) {
       `<h4>` + `<b>` + `Architect/Patron: ` + `</b>` + currentFeature.properties.architect + `</h4>` +
       `<h4>` + `<b>` + `Total Mentions: ` + `</b>` + currentFeature.properties.count_overall + `</h4>` +
       `<h4>` + `<b>` + `Books: ` + `</b>` + pageNumbers(currentFeature.properties.book_title, currentFeature) + `</h4>` +
-      `<h4>` + `<b>` + `Built: ` + `</b>` +  currentFeature.properties.unbuilt + `</h4>`)
+      `<h4>` + `<b>` + `Built: ` + `</b>` +  currentFeature.properties.built + `</h4>`)
       
       .addTo(map);
   // if initial and final date are available
@@ -156,7 +156,7 @@ function createPopup(currentFeature) {
         `<h4>` + `<b>` + `Architect/Patron: ` + `</b>` + currentFeature.properties.architect + `</h4>` +
         `<h4>` + `<b>` + `Total Mentions: ` + `</b>` + currentFeature.properties.count_overall + `</h4>` +
         `<h4>` + `<b>` + `Books: ` + `</b>` + pageNumbers(currentFeature.properties.book_title, currentFeature) + `</h4>` +
-        `<h4>` + `<b>` + `Built: ` + `</b>` +  currentFeature.properties.unbuilt + `</h4>`)
+        `<h4>` + `<b>` + `Built: ` + `</b>` +  currentFeature.properties.built + `</h4>`)
         
         .addTo(map);
   }

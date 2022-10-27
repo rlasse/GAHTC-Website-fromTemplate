@@ -234,6 +234,7 @@ p2 {
 }
 /* HTML sidebar heading style; wanna make it sticky buyt it's not working */
 .heading {
+  position: -webkit-sticky;
   position: sticky;
   background: black;
   border-bottom: 1px solid #eee;
@@ -245,6 +246,7 @@ p2 {
 }
 
 .sidebar-heading {
+  position: -webkit-sticky;
   position: sticky;
   background: black;
   border-bottom: 1px solid #eee;
@@ -289,7 +291,9 @@ class to change color
 /*dual rangeslider*/
 input[type=range] {
   box-sizing: border-box;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   width: 80%;
   margin: 0;
   /* Add some L/R padding to ensure box shadow of handle is shown */
@@ -313,7 +317,8 @@ input[type=range]::-webkit-slider-thumb {
   position: relative;
   /* Add some margin to ensure box shadow is shown */
   cursor: pointer;
-  appearance: none;
+  -webkit-appearance: none;
+          appearance: none;
   pointer-events: all;
   /*box-shadow: 0 1px 4px 0.5px rgba(0, 0, 0, 0.25);*/
   z-index: 2;
@@ -354,6 +359,4 @@ input[type=range]::-webkit-slider-thumb::before {
   justify-content: space-between;
   padding: 0 12px;
   color: #635a5a;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

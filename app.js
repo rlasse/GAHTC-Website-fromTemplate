@@ -118,7 +118,8 @@ function createPopup(currentFeature) {
       `<h4>` + `<b>` + `Date: ` + `</b>` + `Unknown` + `</h4>` + 
       `<h4>` + `<b>` + `Architect/Patron: ` + `</b>` + currentFeature.properties.architect + `</h4>` +
       `<h4>` + `<b>` + `Total Mentions: ` + `</b>` + currentFeature.properties.count_overall + `</h4>` +
-      `<h4>` + `<b>` + `Books: ` + `</b>` + pageNumbers(currentFeature.properties.book_title, currentFeature) + `</h4>`)
+      `<h4>` + `<b>` + `Books: ` + `</b>` + pageNumbers(currentFeature.properties.book_title, currentFeature) + `</h4>` +
+      `<h4>` + `<b>` + `Unbuilt: ` + `</b>` +  currentFeature.properties.unbuilt + `</h4>`)
       .addTo(map);
   // if final date is empty
   } else if (currentFeature.properties.final_date === "") {

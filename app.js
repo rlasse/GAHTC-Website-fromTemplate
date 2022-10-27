@@ -8,7 +8,7 @@ const columnHeaders = ['story_title', 'architect', 'location'];
 const filterconfigs = [
     {
       type: 'checkbox',
-      title: 'Book: ',
+      title: 'Book',
       columnHeader: 'book_title',
       listItems: [
         'A History of Architecture: Settings and Rituals',
@@ -25,7 +25,7 @@ const filterconfigs = [
     },
     {
       type: 'dropdown',
-      title: 'Includes floor plan: ',
+      title: 'Includes Floor Plan',
       columnHeader: 'fp_overall',
       listItems: [
         'Y',
@@ -38,7 +38,7 @@ const filterconfigs = [
     },
     {
       type: 'dropdown',
-      title: 'Is built: ',
+      title: 'Is Built',
       columnHeader: 'built',
       listItems: [
         'Yes',
